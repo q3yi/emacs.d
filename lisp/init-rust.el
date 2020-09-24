@@ -1,4 +1,4 @@
-  ;;; init-rust.el --- Configure rust-mode
+  ;;; init-rust.el --- Configure rust-mode -*- lexical-binding: t -*-
 
 (use-package rust-mode
   :mode "\\.rs\\'"

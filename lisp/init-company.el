@@ -1,4 +1,4 @@
-;;; init-company.el --- Configurate company
+;;; init-company.el --- Configurate company -*- lexical-binding: t -*-
 
 (use-package company
   :hook ((after-init . global-company-mode))

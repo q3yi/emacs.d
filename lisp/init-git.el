@@ -1,4 +1,4 @@
-;;; init-git --- Configure magit
+;;; init-git --- Configure magit -*- lexical-binding: t -*-
 
 (use-package magit
   :ensure

@@ -1,8 +1,8 @@
-;;; init-osx.el
+;;; init-osx.el --- Set keybindings on macOS -*- lexical-binding: t -*-
 
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns))
-  :demand
+  :demand ;; ensure be executed once emacs started, since I set deferred as default in use-package
   :config
   (exec-path-from-shell-initialize))
 

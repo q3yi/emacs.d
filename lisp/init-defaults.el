@@ -1,4 +1,4 @@
-;;; init-defaults.el -- Better default configuration for build-in configuration
+;;; init-defaults.el -- Better default configuration for build-in configuration -*- lexical-binding: t -*-
 
 ;; suppress backup file
 (setq make-backup-files nil)

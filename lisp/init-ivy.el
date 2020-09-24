@@ -1,4 +1,4 @@
-;;; init-ivy.el --- Configure ivy
+;;; init-ivy.el --- Configure ivy -*- lexical-binding: t -*-
 
 (use-package ivy
   :demand

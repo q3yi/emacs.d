@@ -1,4 +1,4 @@
-;;; init-crux.el --- Configure crux package
+;;; init-crux.el --- Configure crux package -*- lexical-binding: t -*-
 
 (use-package crux
   :bind (("C-k" . crux-smart-kill-line)
