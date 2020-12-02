@@ -4,4 +4,4 @@
   :ensure
   :bind (("C-x g" . magit-status)))
 
-(provide 'init-magit)
+(provide 'init-git)

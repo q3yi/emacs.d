@@ -25,6 +25,7 @@
 (require 'init-ivy)
 (require 'init-company)
 
+(require 'init-git)
 (require 'init-smartparens)
 
 (require 'init-golang)
