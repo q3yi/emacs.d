@@ -32,6 +32,8 @@
 (require 'init-rust)
 (require 'init-lsp)
 
+(require 'init-markdown)
+
 (require 'init-org)
 (require 'init-which-key)
 
@@ -43,6 +45,10 @@
 ;; load custom.el if file exists
 (when (and (file-exists-p custom-file) (display-graphic-p))
   (load custom-file))
+
+;; start emacs server if no server process is running
+(unless server-process
+  (server-start))
 
 (provide 'init)
 
