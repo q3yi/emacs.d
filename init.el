@@ -47,6 +47,7 @@
   (load custom-file))
 
 ;; start emacs server if no server process is running
+(require 'server)
 (unless server-process
   (server-start))
 
