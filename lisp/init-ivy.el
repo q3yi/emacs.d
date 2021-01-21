@@ -1,6 +1,7 @@
 ;;; init-ivy.el --- Configure ivy -*- lexical-binding: t -*-
 
 (use-package ivy
+  :diminish
   :demand
   :hook (after-init . ivy-mode)
   :config

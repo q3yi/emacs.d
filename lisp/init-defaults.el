@@ -17,8 +17,6 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(eq (get 'downcase-region 'disabled) nil)
-
 ;; enable some commands that disabled by default
 (let ((commands '(downcase-region
 		  upcase-region
