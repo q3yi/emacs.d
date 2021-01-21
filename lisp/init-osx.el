@@ -12,4 +12,7 @@
 
 (global-set-key (kbd "S-h") 'ns-do-hide-emacs)
 
+;; use fullscreen when start on mac
+(setq initial-frame-alist (quote ((fullscreen . maximized))))
+
 (provide 'init-osx)

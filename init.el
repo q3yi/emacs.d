@@ -17,6 +17,7 @@
 (require 'init-epla)
 (require 'init-defaults)
 (require 'init-gui)
+(require 'init-themes)
 
 (when *is-a-mac*
   (require 'init-osx))
@@ -36,7 +37,6 @@
 
 (require 'init-org)
 (require 'init-which-key)
-
 
 ;; drag-stuff
 ;; ace-window
