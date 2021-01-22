@@ -7,6 +7,7 @@
 	 ("C-c n" . crux-cleanup-buffer-or-region)
 	 ("C-c d" . crux-duplicate-current-line-or-region)
 	 ("C-c j" . crux-top-join-line)
-	 ("C-c ," . crux-find-user-init-file)))
+	 ("C-c ," . crux-find-user-init-file)
+	 ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
 (provide 'init-crux)
