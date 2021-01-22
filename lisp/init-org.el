@@ -51,7 +51,8 @@
 
   :config
   (qy/org-setup-task-system)
-  (qy/org-setup-chinese-latex))
+  (qy/org-setup-chinese-latex)
+  (require 'org-tempo))
 
 ;; use org-fragtog to toggle org-mode latex preview
 (use-package org-fragtog
