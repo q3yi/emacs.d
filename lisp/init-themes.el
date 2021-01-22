@@ -1,14 +1,25 @@
 ;;; init-themes.el --- Configure emacs color theme -*- lexical-binding: t -*-
 
-;; in order for the icons to work, fonts should be installed
-;; run `M-x all-the-icons-install-fonts` command when first installed
-(use-package all-the-icons)
+;; in order for the icons to work, fonts should be installedf
+;; run `M-x all-the-icons-install-fonts` command when first installedq
+(use-package all-the-icons
+  :if (display-graphic-p)
+  :commands all-the-icons-install-fonts
+  :init
+  (unless (find-font (font-spec :name "all-the-icons"))
+    (all-the-icons-install-fonts t)))
+
+(use-package all-the-icons-dired
+  :after all-the-icons
+  :if (display-graphic-p)
+  :hook (dired-mode . all-the-icons-dired-mode))
 
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)
-  :config
-  (setq doom-modeline-icon (display-graphic-p)))
+  :custom
+  ((doom-modeline-height 20)
+   (doom-modeline-icon (display-graphic-p))))
 
 (use-package doom-themes
   :ensure t
@@ -20,3 +31,4 @@
   (doom-themes-org-config))
 
 (provide 'init-themes)
+
