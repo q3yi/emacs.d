@@ -26,6 +26,8 @@
 (require 'init-ivy)
 (require 'init-company)
 
+(require 'init-projectile)
+
 (require 'init-git)
 (require 'init-smartparens)
 
@@ -52,4 +54,3 @@
   (server-start))
 
 (provide 'init)
-
