@@ -6,11 +6,9 @@
 ;; change custom-file from 'init.el' to 'custom.el'
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(defconst *is-a-mac* (eq system-type 'darwin))
-
 ;; workaround for missing project-root function in project.el
-(unless (fboundp 'project-root)
-  (defun project-root (project) (car (project-roots project))))
+;; (unless (fboundp 'project-root)
+;;   (defun project-root (project) (car (project-roots project))))
 
 (require 'init-network)
 
@@ -19,7 +17,7 @@
 (require 'init-gui)
 (require 'init-themes)
 
-(when *is-a-mac*
+(when (eq system-type 'darwin)
   (require 'init-osx))
 
 (require 'init-crux)
@@ -29,13 +27,14 @@
 (require 'init-projectile)
 (require 'init-dired)
 (require 'init-term)
+(require 'init-ibuffer)
 
 (require 'init-git)
 (require 'init-smartparens)
 
 (require 'init-golang)
 (require 'init-rust)
-(require 'init-lsp)
+;; (require 'init-lsp)
 
 (require 'init-markdown)
 
