@@ -1,4 +1,6 @@
 ;;; init.el -- Load configuration at start time -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 ;; add custom lisp filepath
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
@@ -24,6 +26,8 @@
 (require 'init-ivy)
 (require 'init-company)
 
+(require 'init-flycheck)
+
 (require 'init-projectile)
 (require 'init-dired)
 (require 'init-term)
@@ -43,7 +47,6 @@
 
 ;; drag-stuff
 ;; ace-window
-;; flycheck or flymake
 
 ;; load custom.el if file exists
 (when (and (file-exists-p custom-file) (display-graphic-p))
@@ -55,3 +58,4 @@
   (server-start))
 
 (provide 'init)
+;;; init.el ends here
