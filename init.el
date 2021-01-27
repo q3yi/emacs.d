@@ -27,6 +27,7 @@
 (require 'init-company)
 
 (require 'init-projectile)
+(require 'init-term)
 
 (require 'init-git)
 (require 'init-smartparens)
