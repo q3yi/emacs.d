@@ -1,8 +1,12 @@
 ;;; init-smartparens.el --- Configurate paired structure editing -*- lexical-binding: t -*-
 
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 (use-package smartparens-config
+  :demand
   :ensure smartparens
   :config
-  (show-smartparens-global-mode t))
+  (smartparens-global-mode))
 
 (provide 'init-smartparens)
