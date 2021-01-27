@@ -9,11 +9,6 @@
   (unless (find-font (font-spec :name "all-the-icons"))
     (all-the-icons-install-fonts t)))
 
-(use-package all-the-icons-dired
-  :after all-the-icons
-  :if (display-graphic-p)
-  :hook (dired-mode . all-the-icons-dired-mode))
-
 (use-package doom-modeline
   :ensure t
   :hook (after-init . doom-modeline-mode)

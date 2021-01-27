@@ -27,6 +27,7 @@
 (require 'init-company)
 
 (require 'init-projectile)
+(require 'init-dired)
 (require 'init-term)
 
 (require 'init-git)
