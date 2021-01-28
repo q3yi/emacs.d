@@ -19,10 +19,10 @@
   "Setup my task management system"
 
   (setq org-directory "~/OrgFiles"
-	org-default-notes-file "Tasks.org"
+	org-default-notes-file (expand-file-name "Tasks.org" org-directory)
 	org-agenda-files (mapcar
 			  (lambda (x) (f-join org-directory x))
-			  '("Tasks.org" "Habits.org"))
+			  '("Tasks.org" "Habits.org" "Ceremonies.org" "Cycles.org"))
 	
 	org-refile-targets '(("Archive.org" :maxlevel . 1))
 
@@ -40,11 +40,14 @@
   :demand
   :ensure
   :hook (org-mode . qy/org-mode-setup)
-  :custom ((org-ellipsis " ▾"))
+  :custom
+  ((org-ellipsis " ▾")
+   ;; use svg for preview instead of png
+   ;; may not be worked on system that do not support display svg
+   (org-latex-create-formula-image-program 'dvisvgm))
 
   :bind
-  (("C-c l" . org-store-link)
-   ("C-c a" . org-agenda)
+  (("C-c a" . org-agenda)
    ("C-c c" . org-capture)
    :map org-mode-map
    ("C-c C-q". counsel-org-tag))
@@ -60,7 +63,7 @@
   :hook
   (org-mode . org-fragtog-mode))
 
-;;export org as hugo compatible markdown
+;; export org as hugo compatible markdown
 (use-package ox-hugo
   :ensure t
   :after org)
