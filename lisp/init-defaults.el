@@ -11,12 +11,6 @@
 ;; suppress anonying ring bell
 (setq ring-bell-function 'ignore)
 
-;; coding system
-(prefer-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-
 ;; smart tab behavior
 (setq tab-always-indent 'complete)
 
@@ -29,7 +23,8 @@
 (global-set-key [remap capitalize-word] 'capitalize-dwim)
 
 ;; save sessions when emacs exits
-(desktop-save-mode t)
+;; TODO not work well, comment out now
+;; (desktop-save-mode t)
 
 (provide 'init-defaults)
 ;;; init-defaults.el ends here

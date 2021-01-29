@@ -12,6 +12,8 @@
 ;; (unless (fboundp 'project-root)
 ;;   (defun project-root (project) (car (project-roots project))))
 
+(require 'init-coding-system)
+
 (require 'init-network)
 
 (require 'init-epla)
@@ -47,7 +49,6 @@
 (require 'init-which-key)
 
 ;; drag-stuff
-;; ace-window
 
 ;; load custom.el if file exists
 (when (and (file-exists-p custom-file) (display-graphic-p))

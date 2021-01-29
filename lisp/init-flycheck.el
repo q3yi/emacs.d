@@ -1,4 +1,4 @@
-;;; init.el -- Use flycheck to relpace flymake -*- lexical-binding: t -*-
+;;; init-flycheck.el -- Use flycheck to relpace flymake -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
