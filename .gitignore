@@ -10,5 +10,7 @@ recentf
 custom.el
 ido*
 *.*~
+*lsp-session*
+*desktop*
 
 projectile-bookmarks.eld
