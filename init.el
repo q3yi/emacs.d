@@ -32,13 +32,14 @@
 (require 'init-dired)
 (require 'init-term)
 (require 'init-ibuffer)
+(require 'init-windows)
 
 (require 'init-git)
 (require 'init-smartparens)
 
 (require 'init-golang)
 (require 'init-rust)
-;; (require 'init-lsp)
+(require 'init-lsp)
 
 (require 'init-markdown)
 
