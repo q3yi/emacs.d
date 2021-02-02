@@ -18,7 +18,6 @@
 
 (require 'init-epla)
 (require 'init-defaults)
-(require 'init-gui)
 (require 'init-themes)
 
 (when (eq system-type 'darwin)
