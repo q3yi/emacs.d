@@ -1,10 +1,12 @@
-  ;;; init-rust.el --- Configure rust-mode -*- lexical-binding: t -*-
+;;; init-rust.el --- Configure rust-mode -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
-(use-package rust-mode
-  :mode "\\.rs\\'"
-  :config
-  (setq rust-format-on-save t)
-  :hook
-  ('rust-mode-hook . (lambda() (setq indent-tabs-mode nil))))
+(use-package rustic
+  :custom
+  ((rustic-lsp-client 'lsp-mode)
+   (rustic-lsp-server 'rust-analyzer)
+   (rustic-format-on-save t)))
 
 (provide 'init-rust)
+;;; init-rust.el ends here

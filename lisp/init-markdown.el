@@ -1,4 +1,6 @@
 ;;; init-markdown.el --- Use markdown mode for markdown files -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 (use-package markdown-mode
   :commands (markdown-mode gfm-mode)
@@ -8,3 +10,4 @@
   :init (setq markdown-command "multimarkdown"))
 
 (provide 'init-markdown)
+;;; init-markdown.el ends here

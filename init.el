@@ -28,6 +28,8 @@
 (require 'init-ivy)
 (require 'init-company)
 
+(require 'init-git)
+(require 'init-smartparens)
 (require 'init-flycheck)
 
 (require 'init-projectile)
@@ -36,12 +38,13 @@
 (require 'init-ibuffer)
 (require 'init-windows)
 
-(require 'init-git)
-(require 'init-smartparens)
-
+(require 'init-lsp)
 (require 'init-golang)
 (require 'init-rust)
-(require 'init-lsp)
+(require 'init-lua)
+(require 'init-fish)
+(require 'init-html)
+(require 'init-javascript) ;; TODO configurate when start js development
 
 (require 'init-markdown)
 
