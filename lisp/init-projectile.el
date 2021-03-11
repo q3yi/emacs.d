@@ -7,6 +7,7 @@
 (defconst qy/projectile-search-folders '("~/.emacs.d"
 					 "~/.config/dotfiles"
 					 "~/200-craft/210-computer/repos"
+					 "~/200-craft/230-reading/repos"
 					 "~/200-craft/270-ruc/repos"))
 
 (use-package projectile

@@ -6,7 +6,9 @@
   :custom
   ((vterm-use-vterm-prompt-detection-method t)
    (vterm-buffer-name-string "vterm %s")
-   (vterm-max-scrollback 10000)))
+   (vterm-max-scrollback 10000))
+  :bind (:map vterm-mode-map
+	      ("C-c C-c" . vterm-send-C-c)))
 
 ;; configurate eshell
 (use-package eshell

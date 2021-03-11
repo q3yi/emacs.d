@@ -1,4 +1,6 @@
 ;;; init-osx.el --- Set keybindings on macOS -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 (use-package exec-path-from-shell
   :if (memq window-system '(mac ns))
@@ -14,7 +16,8 @@
 
 ;; use fullscreen when start on mac
 (when (display-graphic-p)
-  (setq initial-frame-alist (quote ((fullscreen . maximized))))
+  ;; (setq initial-frame-alist (quote ((fullscreen . maximized))))
   (mac-auto-operator-composition-mode))
 
 (provide 'init-osx)
+;;; init-osx.el ends here

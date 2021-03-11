@@ -16,6 +16,8 @@
 	([remap completion-at-point] . company-complete)
 	([remap indent-for-tab-command] . company-indent-or-complete-common)
    :map company-active-map
+	("<return>" . company-abort)
+	("RET" . company-abort)
 	("M-/" . company-other-backend)
 	("C-n" . company-select-next)
 	("C-p" . company-select-previous)
@@ -23,7 +25,9 @@
 
 (use-package company-box
   :if (display-graphic-p)
-  :hook (company-mode . company-box-mode))
+  :hook (company-mode . company-box-mode)
+  :custom
+  ((company-box-doc-enable nil)))
 
 (provide 'init-company)
 ;;; init-company.el ends here
