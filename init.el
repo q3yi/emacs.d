@@ -38,8 +38,10 @@
 (require 'init-windows)
 
 (require 'init-lsp)
+
 (require 'init-golang)
 (require 'init-rust)
+(require 'init-python)
 (require 'init-lua)
 (require 'init-fish)
 (require 'init-html)
