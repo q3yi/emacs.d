@@ -31,7 +31,7 @@
 
   (setq org-todo-keywords
 	'((sequence "TODO(t)" "|" "DONE(d!/!)")
-	  (sequence "WAIT(w)" "READING(r!)" "|" "FIN(f@/!)")))
+	  (sequence "READING(r!)" "WAIT(w)" "|" "BREAK(b)" "FIN(f@/!)")))
 
   ;; auto save all org buffer when refile
   (advice-add 'org-refile :after 'org-save-all-org-buffers)

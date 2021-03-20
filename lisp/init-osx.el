@@ -9,10 +9,8 @@
   (exec-path-from-shell-initialize))
 
 (setq mac-command-modifier 'meta)
-(setq mac-right-command-modifier 'super)
-(setq mac-option-modifier 'none)
-
-(global-set-key (kbd "S-h") 'ns-do-hide-emacs)
+(setq mac-right-command-modifier 'hyper)
+(setq mac-option-modifier 'super)
 
 ;; use fullscreen when start on mac
 (when (display-graphic-p)

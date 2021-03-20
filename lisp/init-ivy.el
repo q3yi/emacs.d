@@ -1,4 +1,6 @@
 ;;; init-ivy.el --- Configure ivy -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 (use-package ivy
   :diminish
@@ -28,6 +30,13 @@
 (use-package ivy-rich
   :hook (ivy-mode . ivy-rich-mode))
 
+(use-package avy
+  :bind (("C-'" . avy-goto-char)
+	 ("s-'" . avy-goto-char-2)
+	 ("M-g f" . avy-goto-line)
+	 ("M-g w" . avy-goto-word-1)
+	 ("M-g e" . avy-goto-word-0)))
+
 (use-package helpful
   :custom
   (counsel-describe-function-function #'helpful-callable)
@@ -39,3 +48,4 @@
   ([remap describe-key] . helpful-key))
 
 (provide 'init-ivy)
+;;; init-ivy.el ends here

@@ -14,6 +14,10 @@
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 
+;; adjust
+(setq gc-cons-threshold (* 128 1024 1024))
+(setq read-process-output-max (* 1024 1024))
+
 ;; disable GUI elements
 (menu-bar-mode -1)
 (tool-bar-mode -1)
