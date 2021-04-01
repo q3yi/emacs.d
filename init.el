@@ -60,7 +60,7 @@
 
 ;; start emacs server if no server process is running
 (require 'server)
-(unless server-process
+(unless (server-running-p server-name)
   (server-start))
 
 (provide 'init)
