@@ -47,6 +47,8 @@
 (require 'init-html)
 (require 'init-javascript) ;; TODO configurate when start js development
 
+(require 'init-solidity)
+
 (require 'init-markdown)
 
 (require 'init-org)
