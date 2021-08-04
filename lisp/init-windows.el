@@ -4,7 +4,12 @@
 
 (use-package ace-window
   :ensure t
-  :bind (("S-o" . ace-window)
+  :bind (("s-o" . ace-window)
+	 ("s-s" . ace-swap-window)
+	 ("s--" . split-window-below)
+	 ("s-\\" . split-window-right)
+	 ("s-1" . delete-other-windows)
+	 ("s-w" . delete-window)
 	 ([remap other-window] . ace-window)))
 
 (provide 'init-windows)

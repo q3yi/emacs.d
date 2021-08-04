@@ -15,7 +15,9 @@
 ;; use fullscreen when start on mac
 (when (display-graphic-p)
   ;; (setq initial-frame-alist (quote ((fullscreen . maximized))))
-  (mac-auto-operator-composition-mode))
+  (if (fboundp 'mac-auto-operator-composition-mode)
+      ;; mac-auto-operator-composition-mode only exists in emacs-mac
+      (mac-auto-operator-composition-mode)))
 
 (provide 'init-osx)
 ;;; init-osx.el ends here
