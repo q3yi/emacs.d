@@ -31,11 +31,11 @@
 
   (setq org-todo-keywords
 	'((sequence "TODO(t)" "|" "DONE(d!/!)")
-	  (sequence "READING(r!)" "WAIT(w)" "|" "BREAK(b)" "FIN(f@/!)")))
+	  (sequence "READING(r!)" "WAIT(w)" "|" "BREAK(b)" "FIN(f!/!)")))
 
   ;; auto save all org buffer when refile
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
-  
+
   (require 'org-habit)
   (add-to-list 'org-modules 'org-habit)
   (setq org-habit-graph-column 60))
@@ -48,7 +48,8 @@
   ((org-ellipsis " ▾")
    ;; use svg for preview instead of png
    ;; may not be worked on system that do not support display svg
-   (org-latex-create-formula-image-program 'dvisvgm))
+   (org-latex-create-formula-image-program 'dvisvgm)
+   (org-return-follows-link t))
 
   :bind
   (("C-c a" . org-agenda)
@@ -70,12 +71,24 @@
 ;; export org as hugo compatible markdown
 (use-package ox-hugo
   :ensure t
-  :after org)
+  :after ox)
 
 ;; beautify headline bullets
 (use-package org-bullets
   :after org
   :hook (org-mode . org-bullets-mode))
+
+(use-package org-roam
+  :ensure t
+  :init
+  (setq org-roam-v2-ack t
+	org-roam-directory (file-truename "~/box")
+	org-roam-db-location (file-truename "~/box/roam/org-roam.db"))
+  :bind
+  (("C-c o l" . org-roam-buffer-toggle)
+   ("C-c o f" . org-roam-node-find)
+   ("C-c o i" . org-roam-node-insert))
+  :config (org-roam-db-autosync-enable))
 
 (provide 'init-org)
 ;;; init-org.el ends here
