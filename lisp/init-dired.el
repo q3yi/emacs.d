@@ -1,4 +1,12 @@
 ;;; init-dired.el --- Configurate dired mode -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
+
+(use-package dired
+  :ensure nil
+  :config
+  (setq dired-listing-switches "-alh"
+	dired-dwim-target t))
 
 (use-package dired-single
   :after dired
@@ -14,5 +22,6 @@
   :hook (dired-mode . all-the-icons-dired-mode))
 
 (provide 'init-dired)
+;;; init-dired ends here
 
 
