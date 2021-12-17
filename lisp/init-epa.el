@@ -1,6 +1,5 @@
 ;;; init-epa.el -- Configuration for epa and gpg -*- lexical-binding: t -*-
 ;;; Commentary:
-
 ;;; Code:
 
 (use-package epa

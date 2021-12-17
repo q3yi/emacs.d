@@ -1,4 +1,6 @@
 ;;; init-term.el --- Configurate term mode -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 ;; setup vterm
 (use-package vterm
@@ -19,3 +21,4 @@
    (eshell-scroll-to-bottom-on-input t)))
 
 (provide 'init-term)
+;;; init-term.el ends here

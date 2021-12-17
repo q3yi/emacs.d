@@ -24,6 +24,7 @@
 (when (eq system-type 'darwin)
   (require 'init-osx))
 
+(require 'init-undo-tree)
 (require 'init-crux)
 (require 'init-ivy)
 (require 'init-company)

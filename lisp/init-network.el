@@ -1,4 +1,6 @@
 ;;; init-network.el --- Configurate network proxies -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 (require 'url-vars)
 
@@ -8,3 +10,5 @@
 			     ("https" . "127.0.0.1:7890"))))
 
 (provide 'init-network)
+;;; init-network.el ends here
+

@@ -1,4 +1,6 @@
 ;;; init-themes.el --- Configure emacs color theme -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 ;; in order for the icons to work, fonts should be installedf
 ;; run `M-x all-the-icons-install-fonts` command when first installedq
@@ -26,4 +28,4 @@
   (doom-themes-org-config))
 
 (provide 'init-themes)
-
+;;; init-themes.el ends here

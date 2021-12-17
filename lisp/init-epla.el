@@ -1,4 +1,6 @@
 ;;; init-epla.el -- Set epla mirror and require 'user-package package -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 ;; tsinghua mirror
 ;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
@@ -31,4 +33,4 @@
   (setq use-package-verbose nil))
 
 (provide 'init-epla)
-
+;;; init-epla.el ends here

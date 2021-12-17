@@ -1,4 +1,6 @@
 ;;; init-crux.el --- Configure crux package -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 
 (use-package crux
   :bind (("C-k" . crux-smart-kill-line)
@@ -11,3 +13,5 @@
 	 ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
 (provide 'init-crux)
+;;; init-crux.el ends here
+
