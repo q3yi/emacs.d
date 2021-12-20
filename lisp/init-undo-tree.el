@@ -3,7 +3,9 @@
 ;;; Code:
 
 (use-package undo-tree
+  :demand
   :config
+  :delight
   (global-undo-tree-mode))
 
 (provide 'init-undo-tree)
