@@ -4,6 +4,7 @@
 
 (use-package which-key
   :defer nil
+  :delight
   :config (which-key-mode))
 
 (provide 'init-which-key)

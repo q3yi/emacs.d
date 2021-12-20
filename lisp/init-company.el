@@ -3,6 +3,7 @@
 ;;; Code:
 
 (use-package company
+  :delight
   :demand
   :hook ((after-init . global-company-mode))
   :custom
@@ -26,6 +27,7 @@
 (use-package company-box
   :if (display-graphic-p)
   :hook (company-mode . company-box-mode)
+  :delight
   :custom
   ((company-box-doc-enable nil)))
 

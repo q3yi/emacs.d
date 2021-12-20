@@ -19,6 +19,7 @@
 (use-package all-the-icons-dired
   :after (all-the-icons dired)
   :if (display-graphic-p)
+  :delight
   :hook (dired-mode . all-the-icons-dired-mode))
 
 (provide 'init-dired)

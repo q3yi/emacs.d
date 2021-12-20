@@ -11,21 +11,20 @@
   (unless (find-font (font-spec :name "all-the-icons"))
     (all-the-icons-install-fonts t)))
 
-(use-package doom-modeline
-  :ensure t
-  :hook (after-init . doom-modeline-mode)
-  :custom
-  ((doom-modeline-height 20)
-   (doom-modeline-icon (display-graphic-p))))
-
-(use-package doom-themes
-  :ensure t
-  :hook (after-init . (lambda () (load-theme 'doom-one t)))
+(use-package modus-themes
+  :ensure
+  :init
+  (setq modus-themes-italic-constructs t
+        modus-themes-bold-constructs nil
+	modus-themes-prompts '(bold intense)
+	modus-themes-mode-line '(accented)
+	modus-themes-paren-match nil
+        modus-themes-region '(bg-only no-extend))
+  ;; Load the theme files before enabling a theme
+  (modus-themes-load-themes)
   :config
-  (setq doom-themes-enable-bold t
-        doom-themes-enable-italic t)
-
-  (doom-themes-org-config))
+  ;; Load the theme of your choice:
+  (modus-themes-load-vivendi))
 
 (provide 'init-themes)
 ;;; init-themes.el ends here

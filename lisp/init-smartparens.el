@@ -10,7 +10,9 @@
   :ensure t
   :config
   (require 'smartparens-config)
-  (smartparens-global-mode))
+  :hook
+  (prog-mode . smartparens-mode)
+  (prog-mode . show-smartparens-mode))
 
 (provide 'init-smartparens)
 ;;; init-smartparens.el ends here

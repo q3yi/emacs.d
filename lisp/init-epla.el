@@ -8,9 +8,9 @@
 
 ;; ustc mirror
 (setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
-                         ;; ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
-                         ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")))
+			 ;; ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")
+			 ;; ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
+                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")))
 
 (require 'package)
 

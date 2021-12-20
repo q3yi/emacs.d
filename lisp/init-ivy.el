@@ -3,7 +3,7 @@
 ;;; Code:
 
 (use-package ivy
-  :diminish
+  :delight
   :demand
   :hook (after-init . ivy-mode)
   :config

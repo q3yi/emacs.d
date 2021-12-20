@@ -19,6 +19,7 @@
 (require 'init-epla)
 (require 'init-defaults)
 (require 'init-epa)
+(require 'init-delight)
 (require 'init-themes)
 
 (when (eq system-type 'darwin)
@@ -57,8 +58,6 @@
 (require 'init-which-key)
 
 (require 'init-helper-funcs)
-
-;; drag-stuff
 
 ;; load custom.el if file exists
 (when (and (file-exists-p custom-file) (display-graphic-p))

@@ -17,6 +17,9 @@
 ;; use y or n to replace yes and no
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; show column number in modeline
+(column-number-mode)
+
 ;; remap down/upper/capitalize case to dwim (do what I mean)
 (global-set-key [remap downcase-word] 'downcase-dwim)
 (global-set-key [remap upcase-word] 'upcase-dwim)

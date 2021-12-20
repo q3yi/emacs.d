@@ -57,6 +57,7 @@
   :demand
   :ensure
   :hook (org-mode . max/org-mode-setup)
+  :pin gnu
   :custom
   ((org-ellipsis " ▾")
    (org-return-follows-link t))
