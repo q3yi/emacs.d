@@ -56,6 +56,8 @@
 (require 'init-org)
 (require 'init-which-key)
 
+(require 'init-helper-funcs)
+
 ;; drag-stuff
 
 ;; load custom.el if file exists
