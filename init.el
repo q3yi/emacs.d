@@ -14,7 +14,8 @@
 
 (require 'init-coding-system)
 
-(require 'init-network)
+;; setup a local proxy server
+(require 'init-proxy)
 
 (require 'init-epla)
 (require 'init-defaults)
@@ -24,6 +25,10 @@
 
 (when (eq system-type 'darwin)
   (require 'init-osx))
+
+;; when emacs started in WSL
+(when (getenv "WSL_DISTRO_NAME")
+  (require 'init-rime))
 
 (require 'init-undo-tree)
 (require 'init-crux)
