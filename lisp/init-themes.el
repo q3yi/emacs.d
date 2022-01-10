@@ -25,9 +25,19 @@
   :config
   ;; Load light or dark theme depend on current hour when open emacs
   (let ((hour (nth 2 (decode-time (current-time)))))
-    (if (and (> hour 8) (< hour 20))
+    (if (< 8 hour 20)
 	(modus-themes-load-operandi)
       (modus-themes-load-vivendi))))
+
+(defun max/change-theme (appearance)
+  "Change theme, taking current system APPEARANCE into consideration."
+  (pcase appearance
+    ('light (modus-themes-load-operandi))
+    ('dark (modus-themes-load-vivendi))))
+
+;; Change light or dark theme automatically on mac emacs-plus
+(when (boundp 'ns-system-appearance-change-functions)
+  (add-hook 'ns-system-appearance-change-functions #'max/change-theme))
 
 (provide 'init-themes)
 ;;; init-themes.el ends here

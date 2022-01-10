@@ -14,6 +14,8 @@
 (setq use-file-dialog nil)
 (setq use-dialog-box nil)
 
+(setq frame-resize-pixelwise t)
+
 ;; adjust
 (setq gc-cons-threshold (* 128 1024 1024))
 (setq read-process-output-max (* 1024 1024))

@@ -4,8 +4,8 @@
 
 (use-package undo-tree
   :demand
-  :config
   :delight
+  :config
   (global-undo-tree-mode))
 
 (provide 'init-undo-tree)

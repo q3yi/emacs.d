@@ -8,10 +8,6 @@
 ;; change custom-file from 'init.el' to 'custom.el'
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-;; workaround for missing project-root function in project.el
-;; (unless (fboundp 'project-root)
-;;   (defun project-root (project) (car (project-roots project))))
-
 (require 'init-coding-system)
 
 ;; setup a local proxy server
@@ -63,6 +59,10 @@
 (require 'init-which-key)
 
 (require 'init-helper-funcs)
+
+;; enable pixel-scroll-precision-mode on emacs 29
+(when (version< "29.0" emacs-version)
+  (pixel-scroll-precision-mode))
 
 ;; load custom.el if file exists
 (when (and (file-exists-p custom-file) (display-graphic-p))
