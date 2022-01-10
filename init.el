@@ -30,6 +30,7 @@
 (require 'init-crux)
 (require 'init-ivy)
 (require 'init-company)
+(require 'init-yasnippet)
 
 (require 'init-git)
 (require 'init-smartparens)
