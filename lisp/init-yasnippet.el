@@ -3,7 +3,12 @@
 ;;; Code:
 
 (use-package yasnippet
-  :hook (company-mode . yas-minor-mode))
+  :delight (yas-minor-mode)
+  :hook (company-mode . yas-minor-mode-on)
+  :config
+  (dolist (dir yas-snippet-dirs)
+    (when (stringp dir)
+      (yas-load-directory dir t))))
 
 (use-package yasnippet-snippets
   :after yasnippet)

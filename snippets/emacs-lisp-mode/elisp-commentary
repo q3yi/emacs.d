@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# contributor: Qing Yi
+# contributor: Qing YI
 # name: elisp-commentary
 # key: elispc
 # --
@@ -9,6 +9,6 @@
 ;;; Code:
 
 $0
-;;; `(file-name-nondirectory buffer-file-name)` ends here.
+;;; `(file-name-nondirectory buffer-file-name)` ends here
 
 

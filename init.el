@@ -1,4 +1,12 @@
-;;; init.el -- Load configuration at start time -*- lexical-binding: t -*-
+;;; init.el --- Initialization -*- lexical-binding: t no-byte-compile: t -*-
+;;
+;; Author:  Qing YI <qingyi.tss@gmail.com>
+;; URL:     https://github.com/tsingyi/emacs.d
+;;
+;; These files are not part of GNU Emacs.
+;;
+;;; License: MIT
+
 ;;; Commentary:
 ;;; Code:
 
@@ -61,7 +69,7 @@
 
 (require 'init-helper-funcs)
 
-;; enable pixel-scroll-precision-mode on emacs 29
+;; enable pixel-scroll-precision-mode after emacs 29
 (when (version< "29.0" emacs-version)
   (pixel-scroll-precision-mode))
 

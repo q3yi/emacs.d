@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: hugo-article
+# key: <hugo
+# --
+#+HUGO_BASE_DIR: ../
+#+HUGO_SECTION: post
+#+HUGO_AUTO_SET_LASTMOD: t
+#+HUGO_CATEGORIES: $1
+#+HUGO_TAGS: $2
+#+HUGO_DRAFT: false
+#+TITLE: $3
+#+FIRST_CREATE: `(format-time-string "%Y-%m-%dT%H:%M:%S%:z")`
+$0
