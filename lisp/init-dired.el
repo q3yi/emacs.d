@@ -28,12 +28,6 @@
 (define-key dired-mode-map [remap dired-up-directory] 'max/dired-up-directory)
 (define-key dired-mode-map (kbd "b") 'max/dired-up-directory)
 
-(use-package all-the-icons-dired
-  :after (all-the-icons dired)
-  :if (display-graphic-p)
-  :delight
-  :hook (dired-mode . all-the-icons-dired-mode))
-
 (provide 'init-dired)
 ;;; init-dired.el ends here
 
