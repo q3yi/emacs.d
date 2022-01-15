@@ -4,9 +4,14 @@
 
 (require 'dired)
 (require 'dired-x)
+(require 'ls-lisp)
 
 (setq dired-listing-switches "-alh")
 (setq dired-dwim-target t)
+
+;; Using ls-lisp instead of external ls command
+(setq ls-lisp-use-insert-directory-program nil
+      ls-lisp-dirs-first t)
 
 (defun max/dired-find-file ()
   "Extend `dired-find-file', so it open directory in current buffer."
