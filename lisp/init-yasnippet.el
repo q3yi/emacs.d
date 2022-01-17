@@ -10,9 +10,6 @@
     (when (stringp dir)
       (yas-load-directory dir t))))
 
-(use-package yasnippet-snippets
-  :after yasnippet)
-
 (provide 'init-yasnippet)
 ;;; init-yasnippet.el ends here.
 

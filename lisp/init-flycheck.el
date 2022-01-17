@@ -3,7 +3,7 @@
 ;;; Code:
 
 (use-package flycheck
-  :ensure t
+  :commands (flycheck-mode)
   :hook
   (prog-mode . flycheck-mode))
 
