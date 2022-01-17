@@ -40,8 +40,8 @@
 (require 'init-yasnippet)
 
 (require 'init-vertico)
-(require 'init-embark)
 (require 'init-consult)
+(require 'init-embark)
 
 (require 'init-git)
 (require 'init-paredit)
