@@ -7,8 +7,7 @@
   :bind (("C-x C-b" . ibuffer)))
 
 (use-package ibuffer-vc
-  :hook (ibuffer . (lambda ()
-		     (ibuffer-vc-set-filter-groups-by-vc-root))))
+  :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root))
 
 (provide 'init-ibuffer)
 ;;; init-ibuffer.el ends here

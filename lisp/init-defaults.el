@@ -20,14 +20,14 @@
 ;; show column number in modeline
 (column-number-mode)
 
+;; enable `global-so-long-mode', builtin package after emacs 27
+;; handle performance for very long lines
+(global-so-long-mode)
+
 ;; remap down/upper/capitalize case to dwim (do what I mean)
 (global-set-key [remap downcase-word] 'downcase-dwim)
 (global-set-key [remap upcase-word] 'upcase-dwim)
 (global-set-key [remap capitalize-word] 'capitalize-dwim)
-
-;; save sessions when emacs exits
-;; TODO not work well, comment out now
-;; (desktop-save-mode t)
 
 (provide 'init-defaults)
 ;;; init-defaults.el ends here

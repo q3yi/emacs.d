@@ -36,19 +36,23 @@
 
 (require 'init-undo-tree)
 (require 'init-crux)
-(require 'init-ivy)
 (require 'init-company)
 (require 'init-yasnippet)
 
+(require 'init-vertico)
+(require 'init-embark)
+(require 'init-consult)
+
 (require 'init-git)
-(require 'init-smartparens)
+(require 'init-paredit)
 (require 'init-flycheck)
 
-(require 'init-projectile)
 (require 'init-dired)
 (require 'init-term)
 (require 'init-ibuffer)
 (require 'init-windows)
+
+(require 'init-pdf)
 
 (require 'init-lsp)
 
@@ -59,12 +63,15 @@
 (require 'init-fish)
 (require 'init-html)
 (require 'init-javascript) ;; TODO configurate when start js development
+(require 'init-scheme)
 
 (require 'init-solidity)
 
 (require 'init-markdown)
 
 (require 'init-org)
+
+(require 'init-helpful)
 (require 'init-which-key)
 
 (require 'init-helper-funcs)

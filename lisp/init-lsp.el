@@ -8,7 +8,8 @@
   (setq lsp-keymap-prefix "C-c l")
   :hook ((lsp-mode . lsp-enable-which-key-integration)))
 
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package consult-lsp
+  :after (consult lsp-mode))
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
