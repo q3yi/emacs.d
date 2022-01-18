@@ -7,13 +7,14 @@
 (require 'org-habit)
 (require 'ox-latex)
 
-(defun max/org-mode-setup ()
+(defun max-org-mode-setup ()
   "Setup config when org mode startup."
   (org-indent-mode)
   (auto-fill-mode t)
-  (setq truncate-lines nil))
+  (setq truncate-lines nil)
+  (add-hook 'before-save-hook 'whitespace-cleanup))
 
-(add-hook 'org-mode-hook 'max/org-mode-setup)
+(add-hook 'org-mode-hook 'max-org-mode-setup)
 
 ;; define a new preview process, use xelatex instead of latex
 (add-to-list 'org-preview-latex-process-alist
@@ -38,9 +39,9 @@
 ;; add ctex package to exported latex file
 (add-to-list 'org-latex-default-packages-alist '("" "ctex" t ("xelatex")))
 
-(defvar max/roam-directory "~/Roam")
+(defvar max-roam-directory "~/Roam")
 
-(setq org-directory (file-name-concat max/roam-directory "agenda")
+(setq org-directory (file-name-concat max-roam-directory "agenda")
       org-default-notes-file (expand-file-name "tasks.org" org-directory)
       org-agenda-files (directory-files org-directory t "\\.org$")
       org-refile-targets '(("archive.org" :maxlevel . 1))
@@ -62,7 +63,6 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 
-(define-key org-mode-map (kbd "C-c C-q") 'counsel-org-tag)
 (define-key org-mode-map (kbd "<s-return>") 'org-insert-heading)
 
 ;; use org-fragtog to toggle org-mode latex preview
@@ -81,9 +81,9 @@
 
 (use-package org-roam
   :init
-  (setq org-roam-directory max/roam-directory)
+  (setq org-roam-directory max-roam-directory)
   (setq org-roam-db-location
-	(file-name-concat max/roam-directory ".org-roam" "org-roam.db"))
+	(file-name-concat max-roam-directory ".org-roam" "org-roam.db"))
   :commands (org-roam-buffer-toggle
 	     org-roam-node-find
 	     org-roam-node-insert)

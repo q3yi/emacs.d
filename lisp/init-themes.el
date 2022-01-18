@@ -29,7 +29,7 @@
 	(modus-themes-load-operandi)
       (modus-themes-load-vivendi))))
 
-(defun max/change-theme (appearance)
+(defun max-change-theme (appearance)
   "Change theme, taking current system APPEARANCE into consideration."
   (pcase appearance
     ('light (modus-themes-load-operandi))
@@ -37,7 +37,7 @@
 
 ;; Change light or dark theme automatically on mac emacs-plus
 (when (boundp 'ns-system-appearance-change-functions)
-  (add-hook 'ns-system-appearance-change-functions #'max/change-theme))
+  (add-hook 'ns-system-appearance-change-functions #'max-change-theme))
 
 (provide 'init-themes)
 ;;; init-themes.el ends here

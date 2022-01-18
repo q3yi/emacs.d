@@ -34,54 +34,48 @@
 (when (getenv "WSL_DISTRO_NAME")
   (require 'init-rime))
 
+(require 'init-dired)
+(require 'init-term)
+(require 'init-isearch)
+(require 'init-ibuffer)
+(require 'init-windows)
 (require 'init-undo-tree)
-(require 'init-crux)
-(require 'init-company)
-(require 'init-yasnippet)
 
 (require 'init-vertico)
 (require 'init-consult)
 (require 'init-embark)
 
+(require 'init-crux)
+(require 'init-company)
+(require 'init-yasnippet)
 (require 'init-git)
 (require 'init-paredit)
 (require 'init-flycheck)
 
-(require 'init-dired)
-(require 'init-term)
-(require 'init-ibuffer)
-(require 'init-windows)
-
 (require 'init-pdf)
+(require 'init-org)
 
+;; programming language without lsp configuration
+(require 'init-emacs-lisp)
+(require 'init-fish)
+(require 'init-html)
+(require 'init-scheme)
+(require 'init-solidity)
+(require 'init-markdown)
+(require 'init-lua)
+
+;; programming language with lsp enabled
 (require 'init-lsp)
-
 (require 'init-golang)
 (require 'init-rust)
 (require 'init-python)
-(require 'init-lua)
-(require 'init-fish)
-(require 'init-html)
 (require 'init-javascript) ;; TODO configurate when start js development
-(require 'init-scheme)
-
-(require 'init-solidity)
-
-(require 'init-markdown)
-
-(require 'init-org)
 
 (require 'init-helpful)
-(require 'init-which-key)
-
-(require 'init-helper-funcs)
-
-;; enable pixel-scroll-precision-mode after emacs 29
-(when (version< "29.0" emacs-version)
-  (pixel-scroll-precision-mode))
+;; (require 'init-which-key)
 
 ;; load custom.el if file exists
-(when (and (file-exists-p custom-file) (display-graphic-p))
+(when (file-exists-p custom-file)
   (load custom-file))
 
 ;; start emacs server if no server process is running

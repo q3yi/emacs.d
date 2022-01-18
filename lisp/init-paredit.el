@@ -16,7 +16,7 @@
   (emacs-lisp-mode . paredit-mode)
   (scheme-mode . paredit-mode))
 
-(defun max/turn-off-electric-pair-mode ()
+(defun max-turn-off-electric-pair-mode ()
   "Turn off `electric-pair-mode'."
   (electric-pair-mode 0))
 
@@ -25,7 +25,7 @@
 (add-hook 'text-mode-hook 'electric-pair-mode)
 
 ;; Disable `electric-pair-mode' when paredit is enabled
-(add-hook 'paredit-mode-hook 'max/turn-off-electric-pair-mode)
+(add-hook 'paredit-mode-hook 'max-turn-off-electric-pair-mode)
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))

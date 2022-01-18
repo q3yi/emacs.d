@@ -10,6 +10,7 @@
   :delight
   (emacs-lisp-mode "Elisp" :major)
   (auto-fill-mode " AF")
+  (auto-revert-mode)
   (visual-line-mode))
 
 (provide 'init-delight)
