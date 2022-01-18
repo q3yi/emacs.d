@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;;
 ;;; Code:
+(require 'max-misc)
 
 (use-package geiser
   :hook
@@ -15,13 +16,15 @@
 (use-package geiser-guile
   :after geiser)
 
-(defun max/load-flycheck-guile-checker ()
+(defun max-load-flycheck-guile-checker ()
   "Load flycheck guile checker."
   (require  'flycheck-guile))
 
 (use-package flycheck-guile
   :hook
-  (scheme-mode . max/load-flycheck-guile-checker))
+  (scheme-mode . max-load-flycheck-guile-checker))
+
+(add-hook 'scheme-mode-hook 'max-clean-whitespace-before-save)
 
 (provide 'init-scheme)
 ;;; init-scheme.el ends here
