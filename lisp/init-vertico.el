@@ -10,6 +10,14 @@
   :hook
   (after-init . vertico-mode))
 
+(use-package vertico-directory
+  :after vertico
+  :ensure nil
+    :bind (:map vertico-map
+              ("RET" . vertico-directory-enter)
+              ("DEL" . vertico-directory-delete-char))
+    :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
+
 (use-package orderless
   :init
   (setq completion-styles '(orderless)

@@ -7,17 +7,32 @@
   :demand t
   :ensure t
   :bind
-  (("C-." . embark-act)         ;; pick some comfortable binding
-   ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
+  (("C-." . embark-act)
+   ("C-h B" . embark-bindings))
   :init
-  ;; Optionally replace the key help with a completing-read interface
   (setq prefix-help-command #'embark-prefix-help-command)
   :config
-  ;; Hide the mode line of the Embark live/completions buffers
   (add-to-list 'display-buffer-alist
 	       '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
 		 nil
 		 (window-parameters (mode-line-format . none)))))
+
+;; See. https://karthinks.com/software/fifteen-ways-to-use-embark/
+(eval-when-compile
+  (defmacro max-embark-open-with-ace (fn)
+    `(defun ,(intern (concat "max-embark-ace-" (symbol-name fn))) ()
+       (interactive)
+       (with-demoted-errors "%s"
+	 (require 'ace-window)
+	 (let ((aw-dispatch-always t))
+	   (aw-switch-to-window (aw-select nil))
+	   (call-interactively (symbol-function ',fn)))))))
+
+(define-key embark-file-map     (kbd "o") (max-embark-open-with-ace find-file))
+(define-key embark-buffer-map   (kbd "o") (max-embark-open-with-ace switch-to-buffer))
+(define-key embark-bookmark-map (kbd "o") (max-embark-open-with-ace bookmark-jump))
+(define-key embark-symbol-map (kbd "h") 'helpful-symbol)
+(define-key embark-region-map (kbd "d") 'dictionary-search)
 
 (use-package embark-consult
   :demand t
