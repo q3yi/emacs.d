@@ -23,6 +23,7 @@
 
 (require 'init-epla)
 (require 'init-defaults)
+(require 'init-scroll)
 (require 'init-epa)
 (require 'init-delight)
 (require 'init-themes)
@@ -36,9 +37,11 @@
 
 (require 'init-dired)
 (require 'init-term)
+
 (require 'init-isearch)
 (require 'init-ibuffer)
-(require 'init-windows)
+(require 'init-avy)
+(require 'init-ace-window)
 (require 'init-undo-tree)
 
 (require 'init-vertico)

@@ -25,10 +25,6 @@
 (when (fboundp 'global-so-long-mode)
   (global-so-long-mode))
 
-;; enable pixel-scroll-precision-mode after emacs 29
-(when (version< "29.0" emacs-version)
-  (pixel-scroll-precision-mode))
-
 (add-hook 'after-init-hook 'winner-mode)
 
 ;; remap down/upper/capitalize case to dwim (do what I mean)
