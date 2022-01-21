@@ -6,7 +6,7 @@
 
 (use-package rustic
   :custom
-  ((rustic-lsp-client 'lsp-mode)
+  ((rustic-lsp-client 'eglot)
    (rustic-lsp-server 'rust-analyzer)
    (rustic-format-on-save t)))
 

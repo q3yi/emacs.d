@@ -5,7 +5,7 @@
 (require 'init-package-util)
 
 (use-package go-mode
-  :hook (go-mode . lsp-deferred))
+  :hook (go-mode . eglot-ensure))
 
 (provide 'init-golang)
 ;;; init-golang.el ends here

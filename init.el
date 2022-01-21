@@ -69,7 +69,7 @@
 (require 'init-lua)
 
 ;; programming language with lsp enabled
-(require 'init-lsp)
+(require 'init-eglot)
 (require 'init-golang)
 (require 'init-rust)
 (require 'init-python)
