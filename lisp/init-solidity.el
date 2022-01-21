@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package solidity-mode
   :custom (solidity-solc-path "/usr/local/bin/solc"))
 

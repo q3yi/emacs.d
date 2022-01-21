@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package ibuffer
   :ensure nil
   :bind (("C-x C-b" . ibuffer)))

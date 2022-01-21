@@ -3,12 +3,14 @@
 ;;;
 ;;; Code:
 
+(require 'init-package-util)
+(require 'init-ace-window)
+
 (use-package embark
   :demand t
   :ensure t
-  :bind
-  (("C-." . embark-act)
-   ("C-h B" . embark-bindings))
+  :bind (("C-." . embark-act)
+	 ("C-h B" . embark-bindings))
   :init
   (setq prefix-help-command #'embark-prefix-help-command)
   :config

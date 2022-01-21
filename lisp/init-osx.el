@@ -2,15 +2,17 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-package-util)
+(require 'max-misc)
+
 (use-package exec-path-from-shell
-  :demand ;; ensure be executed once emacs started, since I set deferred as default in use-package
+  :demand
   :config
   (exec-path-from-shell-initialize))
 
-(let ((set-if-exists (lambda (sym val) (when (boundp sym) (set sym val)))))
-  (funcall set-if-exists 'mac-command-modifier 'meta)
-  (funcall set-if-exists 'mac-right-command-modifier 'hyper)
-  (funcall set-if-exists 'mac-option-modifier 'super))
+(max-set-value-if-symbol-exists 'mac-command-modifier 'meta)
+(max-set-value-if-symbol-exists 'mac-right-command-modifier 'hyper)
+(max-set-value-if-symbol-exists 'mac-option-modifier 'super)
 
 (when (display-graphic-p)
   ;; (setq initial-frame-alist (quote ((fullscreen . maximized))))

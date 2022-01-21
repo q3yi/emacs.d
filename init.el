@@ -20,8 +20,8 @@
 
 ;; setup a local proxy server
 (require 'init-proxy)
+(require 'init-package-util)
 
-(require 'init-epla)
 (require 'init-defaults)
 (require 'init-scroll)
 (require 'init-epa)
@@ -53,10 +53,11 @@
 (require 'init-yasnippet)
 (require 'init-git)
 (require 'init-paredit)
-(require 'init-flycheck)
+(require 'init-flymake)
 
 (require 'init-pdf)
 (require 'init-org)
+(require 'init-elfeed)
 
 ;; programming language without lsp configuration
 (require 'init-emacs-lisp)

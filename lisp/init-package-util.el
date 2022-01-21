@@ -1,6 +1,7 @@
-;;; init-epla.el -- Set epla mirror and require 'user-package package -*- lexical-binding: t -*-
+;;; init-package-util.el -- Set epla mirror and install 'use-package package -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
+(require 'package)
 
 ;; tsinghua mirror
 ;; (setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
@@ -8,11 +9,9 @@
 
 ;; ustc mirror
 (setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
-			 ;; ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")
+			 ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")
 			 ;; ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
-                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")))
-
-(require 'package)
+			 ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")))
 
 (unless (bound-and-true-p package--initialized)
   (package-initialize))
@@ -20,7 +19,7 @@
 (unless package-archive-contents
   (package-refresh-contents))
 
-;; install 'user-package package if it is not installed
+;; install 'use-package package if it is not installed
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
@@ -32,5 +31,5 @@
   (setq use-package-expand-minimally nil)
   (setq use-package-verbose nil))
 
-(provide 'init-epla)
-;;; init-epla.el ends here
+(provide 'init-package-util)
+;;; init-package-util.el ends here

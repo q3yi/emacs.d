@@ -2,8 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package magit
-  :ensure
+  :ensure t
   :bind (("C-x g" . magit-status)))
 
 (provide 'init-git)

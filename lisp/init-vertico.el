@@ -1,7 +1,9 @@
 ;;; init-vertico.el -- Setup completions -*- lexical-binding: t -*-
 ;;; Commentary:
-;;;   
+;;;
 ;;; Code:
+
+(require 'init-package-util)
 
 (use-package vertico
   :bind
@@ -14,15 +16,15 @@
   :after vertico
   :ensure nil
     :bind (:map vertico-map
-              ("RET" . vertico-directory-enter)
-              ("DEL" . vertico-directory-delete-char))
+	      ("RET" . vertico-directory-enter)
+	      ("DEL" . vertico-directory-delete-char))
     :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 (use-package orderless
   :init
   (setq completion-styles '(orderless)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+	completion-category-defaults nil
+	completion-category-overrides '((file (styles partial-completion)))))
 
 (use-package marginalia
   :custom
@@ -36,5 +38,3 @@
 
 (provide 'init-vertico)
 ;;; init-vertico.el ends here
-
-

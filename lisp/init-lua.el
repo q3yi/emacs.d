@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package lua-mode
   :custom
   ((lua-indent-nested-block-content-align nil)

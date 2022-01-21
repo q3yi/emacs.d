@@ -1,9 +1,12 @@
 ;;; init-company.el --- Configurate company -*- lexical-binding: t -*-
 ;;; Commentary:
+;;;
 ;;; Code:
 
+(require 'init-package-util)
+
 (defun company-mode/backend-with-yas (backend)
-  "Add company-yasnippet to a company BACKEND."
+  "Add `company-yasnippet' to a company BACKEND."
   (if (and (listp backend) (member 'company-yasnippet backend))
       backend
     (append (if (consp backend) backend (list backend))

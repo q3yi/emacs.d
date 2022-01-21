@@ -3,6 +3,8 @@
 ;;;
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package pdf-tools
   :defer t
   :commands (pdf-view-mode pdf-tools-install)

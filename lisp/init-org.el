@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-package-util)
 (require 'org)
 (require 'org-tempo)
 (require 'org-habit)

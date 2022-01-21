@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;;
 ;;; Code:
+
+(require 'init-package-util)
 (require 'vc)
 
 (use-package consult

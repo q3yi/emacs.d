@@ -4,7 +4,6 @@
 
 (require 'dired)
 (require 'dired-x)
-(require 'ls-lisp)
 
 (setq delete-by-moving-to-trash t)
 (setq dired-kill-when-opening-new-dired-buffer t)
@@ -21,7 +20,6 @@
 (define-key dired-mode-map (kbd "b") 'dired-up-directory)
 
 (add-hook 'dired-mode-hook 'hl-line-mode)
-
 
 (provide 'init-dired)
 ;;; init-dired.el ends here

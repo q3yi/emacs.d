@@ -1,6 +1,8 @@
 ;;; init-yaml.el --- Support Yaml files -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
+
+(require 'init-package-util)
 (require 'max-misc)
 
 (use-package yaml-mode

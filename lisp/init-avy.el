@@ -9,6 +9,8 @@
 ;;;
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package avy
   :commands (avy-goto-char-timer)
   :bind

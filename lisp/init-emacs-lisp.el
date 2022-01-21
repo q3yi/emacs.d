@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;;
 ;;; Code:
+
 (require 'max-misc)
 
 (add-hook 'emacs-lisp-mode-hook 'max-clean-whitespace-before-save)

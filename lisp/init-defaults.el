@@ -1,8 +1,8 @@
 ;;; init-defaults.el -- Better default for build-in -*- lexical-binding: t -*-
 ;;; Commentary:
-
-;;; Adjust some Emacs build-in configuration for better experience
-
+;;;
+;;;   Adjust some Emacs build-in configuration for better experience
+;;;
 ;;; Code:
 
 ;; suppress backup file
@@ -31,6 +31,8 @@
 (global-set-key [remap downcase-word] 'downcase-dwim)
 (global-set-key [remap upcase-word] 'upcase-dwim)
 (global-set-key [remap capitalize-word] 'capitalize-dwim)
+
+(global-set-key (kbd "C-x a r") #'align-regexp)
 
 (provide 'init-defaults)
 ;;; init-defaults.el ends here

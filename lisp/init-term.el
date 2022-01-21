@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-package-util)
+
 ;; setup vterm
 (use-package vterm
   :commands vterm

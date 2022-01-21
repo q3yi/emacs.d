@@ -8,6 +8,8 @@
 ;;;
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package ace-window
   :ensure t
   :bind (("s-o" . ace-window)

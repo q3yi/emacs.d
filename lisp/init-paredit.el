@@ -3,18 +3,19 @@
 ;;;
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package paredit
   :delight " Par"
   :bind
   (:map paredit-mode-map
 	("M-<up>" . paredit-splice-sexp)
 	("M-<down>" . paredit-wrap-round))
+  :hook ((emacs-lisp-mode . paredit-mode)
+	 (scheme-mode . paredit-mode))
   :config
   (define-key paredit-mode-map (kbd "M-s") nil)
-  (define-key paredit-mode-map (kbd "M-?") nil)
-  :hook
-  (emacs-lisp-mode . paredit-mode)
-  (scheme-mode . paredit-mode))
+  (define-key paredit-mode-map (kbd "M-?") nil))
 
 (defun max-turn-off-electric-pair-mode ()
   "Turn off `electric-pair-mode'."
@@ -32,5 +33,3 @@
 
 (provide 'init-paredit)
 ;;; init-paredit.el ends here
-
-

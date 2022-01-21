@@ -23,7 +23,6 @@
      0.0))
   "Compatiable english-chinese font pairs.")
 
-
 (defun max--set-font-with-ratio (eng-font cjk-font cjk-font-rescale-ratio)
   "Set different font-family for Latin and CJK.
 

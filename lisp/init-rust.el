@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package rustic
   :custom
   ((rustic-lsp-client 'lsp-mode)

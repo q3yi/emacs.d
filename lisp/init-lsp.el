@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-package-util)
+
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :init
@@ -13,4 +15,3 @@
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
-

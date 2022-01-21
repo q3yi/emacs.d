@@ -1,6 +1,9 @@
 ;;; init-python.el --- setup python development -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
+
+(require 'init-package-util)
+
 (use-package python-mode
   :ensure nil
   :custom
@@ -15,4 +18,3 @@
 
 (provide 'init-python)
 ;;; init-python ends here
-
