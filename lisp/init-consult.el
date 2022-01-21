@@ -15,7 +15,7 @@
 	 ("M-y" . consult-yank-pop)
 	 ("<help> a" . consult-apropos)
 	 ;; M-g bindings (goto-map)
-	 ("M-g f" . consult-flycheck)
+	 ("M-g f" . consult-flymake)
 	 ("M-g g" . consult-goto-line)
 	 ("M-g o" . consult-outline)
 	 ("M-g m" . consult-mark)

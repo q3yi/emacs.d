@@ -18,10 +18,11 @@
     ((:name "Victor Mono" :weight regular :size 15)
      (:name "Sarasa Mono SC" :weight regular :size 15)
      nil)
-    ((:name "Monaco" :weight regular :size 14)
+    ((:name "Monaco" :weight regular :size 13)
      (:name "Sarasa Mono SC" :weight regular :size 15)
-     nil))
+     0.0))
   "Compatiable english-chinese font pairs.")
+
 
 (defun max--set-font-with-ratio (eng-font cjk-font cjk-font-rescale-ratio)
   "Set different font-family for Latin and CJK.

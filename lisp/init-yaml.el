@@ -5,8 +5,7 @@
 
 (use-package yaml-mode
   :hook
-  ((yaml-mode . flycheck-mode)
-   (yaml-mode . max-clean-whitespace-before-save)))
+  ((yaml-mode . max-clean-whitespace-before-save)))
 
 (provide 'init-yaml)
 ;;; init-yaml.el ends here
