@@ -73,6 +73,7 @@
 (require 'init-golang)
 (require 'init-rust)
 (require 'init-python)
+(require 'init-haskell)
 (require 'init-javascript) ;; TODO configurate when start js development
 
 (require 'init-helpful)
