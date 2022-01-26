@@ -10,7 +10,11 @@
   :bind
   (:map paredit-mode-map
 	("M-<up>" . paredit-splice-sexp)
-	("M-<down>" . paredit-wrap-round))
+	("M-<down>" . paredit-wrap-round)
+	("C-<right>" . paredit-forward-slurp-sexp)
+	("C-<left>" . paredit-backward-slurp-sexp)
+	("M-<left>" . paredit-backward-barf-sexp)
+	("M-<right>" . paredit-forward-barf-sexp))
   :hook ((emacs-lisp-mode . paredit-mode)
 	 (scheme-mode . paredit-mode))
   :config
