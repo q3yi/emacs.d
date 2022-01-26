@@ -9,8 +9,6 @@
 
 ;; ustc mirror
 (setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
-			 ("org" . "http://mirrors.ustc.edu.cn/elpa/org/")
-			 ;; ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/melpa-stable/")
 			 ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")))
 
 (unless (bound-and-true-p package--initialized)
