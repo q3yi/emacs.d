@@ -24,7 +24,5 @@
 (global-set-key (kbd "s-c") 'max-scroll-down-line-and-backward)
 (global-set-key (kbd "s-t") 'max-scroll-up-line-and-forward)
 
-(setq scroll-preserve-screen-position nil)
-
 (provide 'init-scroll)
 ;;; init-scroll.el ends here

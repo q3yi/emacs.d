@@ -3,23 +3,23 @@
 ;;; Code:
 
 (defvar max-font-set
-  '(((:name "Iosevka SS07" :weight regular :size 15)
-     (:name "Sarasa Mono SC" :size 15)
+  '(((:name "Ubuntu Mono" :weight regular :size 16)
+     (:name "LXGW WenKai" :size 16)
      0.0)
-    ((:name "Iosevka" :weight regular :size 15)
-     (:name "Sarasa Mono SC" :size 15)
+    ((:name "Iosevka" :weight regular :size 16)
+     (:name "LXGW WenKai" :size 16)
      0.0)
     ((:name "Fantasque Sans Mono" :weight regular :size 16)
-     (:name "Sarasa Mono SC" :size 15)
+     (:name "LXGW WenKai" :size 16)
      0.0)
     ((:name "Terminus (TTF)" :weight medium :size 16)
-     (:name "Sarasa Mono SC Regular" :size 16)
+     (:name "LXGW WenKai" :size 16)
      0.0)
-    ((:name "Victor Mono" :weight regular :size 15)
-     (:name "Sarasa Mono SC" :weight regular :size 15)
+    ((:name "M Plus 1 Code" :weight regular :size 15)
+     (:name "LXGW WenKai" :weight regular :size 16)
      nil)
-    ((:name "Monaco" :weight regular :size 13)
-     (:name "Sarasa Mono SC" :weight regular :size 15)
+    ((:name "monofur for Powerline" :weight regular :size 16)
+     (:name "LXGW WenKai" :weight regular :size 16)
      0.0))
   "Compatiable english-chinese font pairs.")
 
@@ -37,7 +37,7 @@ ENG-FONT and CJK-FONT should be a font object not a name string."
 
   ;; set chinese font
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font t charset cjk-font))
+    (set-fontset-font "fontset-default" charset cjk-font))
 
   (setq face-font-rescale-alist
 	(if (and cjk-font-rescale-ratio (/= cjk-font-rescale-ratio 0.0))
@@ -47,7 +47,7 @@ ENG-FONT and CJK-FONT should be a font object not a name string."
 (defun max-set-font (&optional n)
   "Set font to Nth font pairs in `max-font-set'."
 
-  (interactive "N(1:Iose 07, 2:Iose 08, 3:Fantasque, 4:Term, 5:Vict, 6:Mona): ")
+  (interactive "N(1:Ubuntu, 2:Iose, 3:Fantasque, 4:Term, 5:M+, 6:Monofur): ")
   (let* ((n (if (and n (> n 0)) (- n 1) 0))
 	 (font-pair (nth n max-font-set))
 	 (eng-font-cfg (nth 0 font-pair))
@@ -57,10 +57,14 @@ ENG-FONT and CJK-FONT should be a font object not a name string."
 			      :weight (plist-get eng-font-cfg :weight)
 			      :size (plist-get eng-font-cfg :size)))
 	 (cjk-font (font-spec :name (plist-get cjk-font-cfg :name)
-			      ;; :weight (plist-get cjk-font-cfg :weight)
+			      :weight (plist-get cjk-font-cfg :weight)
 			      :size (plist-get cjk-font-cfg :size)
 			      )))
-    (max--set-font-with-ratio eng-font cjk-font cjk-rescale-ratio)
+    (max--set-font-with-ratio eng-font
+			      ;; weight and size of cjk font is ignored
+			      ;; in order to make scaling works properly
+			      (plist-get cjk-font-cfg :name)
+			      cjk-rescale-ratio)
 
     (message "Set font to %s, CJK font to %s."
 	     (font-get eng-font :name)

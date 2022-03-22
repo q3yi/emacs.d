@@ -6,14 +6,13 @@
 
 (use-package delight
   :demand
-  :pin gnu)
-
-(use-package emacs
-  :delight
-  (emacs-lisp-mode "Elisp" :major)
-  (auto-fill-mode " AF")
-  (auto-revert-mode)
-  (visual-line-mode))
+  :pin gnu
+  :config
+  (delight '((emacs-lisp-mode "Elisp" :major)
+	     (auto-fill-mode " AF" "simple")
+	     (subword-mode)
+	     (auto-revert-mode nil "autorevert")
+	     (visual-line-mode "simple"))))
 
 (provide 'init-delight)
 ;;; init-delight.el ends here

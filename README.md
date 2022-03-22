@@ -26,7 +26,7 @@ everything under my understanding and control.
 As a result, this configuration will updated along with I understand
 emacs deeper.
 
-## Choose on some packages
+## Reason on choices between some packages
 
 ### iCompelete, vertico and ivy
 

@@ -91,6 +91,7 @@
 					   (propertize "${tags}" 'face 'org-tag))))
   :bind
   (("C-c r l" . org-roam-buffer-toggle)
+   ("C-c r i" . org-roam-node-insert)
    ("C-c r f" . org-roam-node-find)
    ("C-c r a" . org-roam-alias-add)
    ("C-c r t" . org-roam-tag-add)

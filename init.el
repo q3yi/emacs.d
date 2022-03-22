@@ -67,6 +67,7 @@
 (require 'init-solidity)
 (require 'init-markdown)
 (require 'init-lua)
+(require 'init-yaml)
 
 ;; programming language with lsp enabled
 (require 'init-eglot)
