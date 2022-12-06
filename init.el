@@ -1,7 +1,7 @@
 ;;; init.el --- Initialization -*- lexical-binding: t no-byte-compile: t -*-
 ;;
 ;; Author:  Qing YI <qingyi.tss@gmail.com>
-;; URL:     https://github.com/tsingyi/emacs.d
+;; URL:     https://github.com/q3yi/emacs.d
 ;;
 ;; These files are not part of GNU Emacs.
 ;;
@@ -25,7 +25,7 @@
 (require 'init-defaults)
 (require 'init-scroll)
 (require 'init-epa)
-;; (require 'init-delight)
+(require 'init-delight)
 (require 'init-themes)
 
 (when (eq system-type 'darwin)
@@ -49,7 +49,7 @@
 (require 'init-embark)
 
 (require 'init-crux)
-(require 'init-yasnippet)
+(require 'init-tempel)
 (require 'init-git)
 (require 'init-paredit)
 (require 'init-flymake)
