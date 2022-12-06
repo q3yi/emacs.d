@@ -5,6 +5,7 @@
 (require 'init-package-util)
 
 (use-package undo-tree
+  :pin gnu
   :demand
   :delight
   :custom ((undo-tree-auto-save-history nil))

@@ -9,6 +9,7 @@
   :bind (("C-x C-b" . ibuffer)))
 
 (use-package ibuffer-vc
+  :pin melpa-stable
   :hook (ibuffer . ibuffer-vc-set-filter-groups-by-vc-root))
 
 (provide 'init-ibuffer)

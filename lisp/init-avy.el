@@ -12,6 +12,7 @@
 (require 'init-package-util)
 
 (use-package avy
+  :pin gnu
   :commands (avy-goto-char-timer)
   :bind
   ("M-'" . avy-goto-char-timer))

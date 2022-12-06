@@ -6,6 +6,7 @@
 (require 'init-package-util)
 
 (use-package paredit
+  :pin melpa-stable
   :delight " Par"
   :bind
   (:map paredit-mode-map
@@ -33,6 +34,7 @@
 (add-hook 'paredit-mode-hook 'max-turn-off-electric-pair-mode)
 
 (use-package rainbow-delimiters
+  :pin melpa-stable
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (provide 'init-paredit)

@@ -7,6 +7,7 @@
 (require 'vc)
 
 (use-package consult
+  :pin gnu
   :demand t
   :bind (("C-c h" . consult-history)
 	 ("C-c m" . consult-mode-command)

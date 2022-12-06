@@ -6,6 +6,7 @@
 (require 'init-package-util)
 
 (use-package pdf-tools
+  :pin melpa-stable
   :defer t
   :commands (pdf-view-mode pdf-tools-install)
   :mode ("\\.[pP][dD][dF]\\'" . pdf-view-mode)

@@ -5,6 +5,7 @@
 (require 'init-package-util)
 
 (use-package crux
+  :pin melpa-stable
   :bind
   (("C-k" . crux-smart-kill-line)
    ("C-o" . crux-smart-open-line)

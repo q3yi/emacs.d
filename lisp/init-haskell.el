@@ -19,6 +19,7 @@ then turn on the minor mode and open the REPL."
   (haskell-interactive-bring))
 
 (use-package haskell-mode
+  :pin melpa-stable
   :init
   (add-to-list 'completion-ignored-extensions ".hi")
   :custom

@@ -5,6 +5,7 @@
 (require 'init-package-util)
 
 (use-package which-key
+  :pin gnu
   :defer nil
   :delight
   :config (which-key-mode))

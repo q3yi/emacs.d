@@ -5,6 +5,7 @@
 (require 'init-package-util)
 
 (use-package markdown-mode
+  :pin melpa-stable
   :commands (markdown-mode gfm-mode)
   :mode (("REDAME\\.md\\'" . gfm-mode)
 	 ("\\.md\\'"       . markdown-mode)

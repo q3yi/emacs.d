@@ -6,6 +6,7 @@
 (require 'init-eglot)
 
 (use-package go-mode
+  :pin melpa-stable
   :hook (go-mode . eglot-ensure))
 
 (provide 'init-golang)

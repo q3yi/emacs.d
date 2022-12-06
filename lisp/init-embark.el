@@ -7,6 +7,7 @@
 (require 'init-ace-window)
 
 (use-package embark
+  :pin melpa-stable
   :demand t
   :ensure t
   :bind (("C-." . embark-act)
@@ -37,9 +38,8 @@
 (define-key embark-region-map (kbd "d") 'dictionary-search)
 
 (use-package embark-consult
-  :demand t
-  :ensure t
-  :after (consult embark))
+  :pin melpa-stable
+  :ensure t)
 
 (provide 'init-embark)
 ;;; init-embark.el ends here

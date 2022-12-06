@@ -7,6 +7,7 @@
 
 ;; minibuffer completion
 (use-package vertico
+  :pin gnu
   :bind
   (:map minibuffer-local-map
 	("M-h" . backward-kill-word))
@@ -22,12 +23,14 @@
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 (use-package orderless
+  :pin gnu
   :init
   (setq completion-styles '(orderless basic)
 	completion-category-defaults nil
 	completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package marginalia
+  :pin gnu
   :custom
   (marginalia-align 'right)
   :init
@@ -39,9 +42,9 @@
 
 ;; corfu completion ui
 (use-package corfu
-  ;; Optional customizations
+  :pin gnu
   :custom
-  (corfu-auto t) ;; Enable auto completion
+  (corfu-auto t)
   (corfu-auto-prefix 2)
   ;; (corfu-auto-delay 0.0)
 
@@ -62,6 +65,7 @@
 
 
 (use-package cape
+  :pin gnu
   :custom
   (cape-dabbrev-check-other-buffers t)
   :init

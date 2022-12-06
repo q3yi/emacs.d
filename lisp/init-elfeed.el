@@ -6,6 +6,7 @@
 (require 'init-package-util)
 
 (use-package elfeed
+  :pin melpa-stable
   :commands elfeed
   :init
   (setq elfeed-db-directory "~/.elfeed"

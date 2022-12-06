@@ -6,6 +6,7 @@
 (require 'max-misc)
 
 (use-package exec-path-from-shell
+  :pin melpa-stable
   :demand
   :config
   (exec-path-from-shell-initialize))

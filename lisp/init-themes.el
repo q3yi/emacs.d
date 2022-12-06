@@ -4,15 +4,6 @@
 
 (require 'init-package-util)
 
-;; in order for the icons to work, fonts should be installedf
-;; run `M-x all-the-icons-install-fonts` command when first installedq
-(use-package all-the-icons
-  :if (display-graphic-p)
-  :commands all-the-icons-install-fonts
-  :init
-  (unless (find-font (font-spec :name "all-the-icons"))
-    (all-the-icons-install-fonts t)))
-
 (defun max-auto-change-theme (&optional appearance)
   "Change theme, taking current system APPEARANCE into consideration."
   (let ((appearance (or appearance
@@ -24,6 +15,7 @@
 
 (use-package modus-themes
   :ensure
+  :pin gnu
   :init
   (setq modus-themes-italic-constructs t
 	modus-themes-bold-constructs nil

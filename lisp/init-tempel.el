@@ -6,10 +6,11 @@
 
 ;; Configure Tempel
 (use-package tempel
-  ;; Require trigger prefix before template name when completing.
+  :pin gnu
   :custom
   (tempel-trigger-prefix "<")
-  (tempel-path (expand-file-name "[!.]*.eld" (concat user-emacs-directory "/templates")))
+  (tempel-path (expand-file-name "[!.]*.eld"
+				 (concat user-emacs-directory "/templates")))
 
   :bind (("M-+" . tempel-complete) ;; Alternative tempel-expand
 	 ("M-*" . tempel-insert))

@@ -5,6 +5,7 @@
 (require 'init-package-util)
 
 (use-package lua-mode
+  :pin melpa-stable
   :custom
   ((lua-indent-nested-block-content-align nil)
    (lua-indent-close-paren-align nil)))

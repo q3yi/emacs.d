@@ -9,6 +9,7 @@
 
 ;; ustc mirror
 (setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
+			 ("melpa-stable" . "http://mirrors.ustc.edu.cn/elpa/stable-melpa/")
 			 ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")))
 
 (unless (bound-and-true-p package--initialized)
@@ -19,6 +20,7 @@
 
 ;; install 'use-package package if it is not installed
 (unless (package-installed-p 'use-package)
+  (add-to-list 'package-pinned-packages '(use-package . "gnu"))
   (package-refresh-contents)
   (package-install 'use-package))
 

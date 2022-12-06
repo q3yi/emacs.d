@@ -10,6 +10,7 @@
   (add-hook 'befor-save-hook 'fish_indent-before-save))
 
 (use-package fish-mode
+  :pin melpa-stable
   :hook
   ((fish-mode . max-indent-before-save)
    (fish-mode . max-clean-whitespace-before-save)))

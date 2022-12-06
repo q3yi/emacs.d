@@ -6,6 +6,7 @@
 
 ;;; In order to start eglot, make sure pyright was installed
 (use-package python-mode
+  :pin melpa-stable
   :ensure nil
   :custom
   (python-shell-interpreter "python3")

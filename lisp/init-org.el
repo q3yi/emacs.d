@@ -69,11 +69,13 @@
 
 ;; use org-fragtog to toggle org-mode latex preview
 (use-package org-fragtog
+  :pin melpa-stable
   :hook
   (org-mode . org-fragtog-mode))
 
 ;; export org as hugo compatible markdown
 (use-package ox-hugo
+  :pin melpa-stable
   :hook
   (org-mode . (lambda ()
 		(with-eval-after-load 'ox

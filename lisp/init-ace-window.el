@@ -11,6 +11,7 @@
 (require 'init-package-util)
 
 (use-package ace-window
+  :pin gnu
   :ensure t
   :bind (("s-o" . ace-window)
 	 ("s-s" . ace-swap-window)

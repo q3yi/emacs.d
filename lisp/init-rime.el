@@ -5,6 +5,7 @@
 (require 'init-package-util)
 
 (use-package rime
+  :pin melpa-stable
   :custom
   (default-input-method "rime")
   (rime-show-candidate 'popup))

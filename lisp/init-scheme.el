@@ -7,6 +7,7 @@
 (require 'max-misc)
 
 (use-package geiser
+  :pin melpa-stable
   :hook
   (scheme-mode . geiser-mode)
   (scheme-mode . max-clean-whitespace-befor-save)
@@ -17,6 +18,7 @@
   (require 'tramp))
 
 (use-package geiser-guile
+  :pin melpa-stable
   :after geiser)
 
 (provide 'init-scheme)

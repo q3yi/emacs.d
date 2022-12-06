@@ -5,6 +5,7 @@
 (require 'init-package-util)
 
 (use-package web-mode
+  :pin melpa-stable
   :mode (("\\.phtml\\'"     . web-mode)
 	 ("\\.tpl\\.php\\'" . web-mode)
 	 ("\\.[agj]sp\\'"   . web-mode)
