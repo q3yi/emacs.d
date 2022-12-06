@@ -4,6 +4,7 @@
 ;;; Code:
 
 (require 'init-package-util)
+(require 'init-eglot)
 
 (defun max-haskell-interactive-bring ()
   "Bring haskell interactive buffer.

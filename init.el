@@ -25,7 +25,7 @@
 (require 'init-defaults)
 (require 'init-scroll)
 (require 'init-epa)
-(require 'init-delight)
+;; (require 'init-delight)
 (require 'init-themes)
 
 (when (eq system-type 'darwin)
@@ -44,18 +44,17 @@
 (require 'init-ace-window)
 (require 'init-undo-tree)
 
-(require 'init-vertico)
+(require 'init-completion)
 (require 'init-consult)
 (require 'init-embark)
 
 (require 'init-crux)
-(require 'init-company)
 (require 'init-yasnippet)
 (require 'init-git)
 (require 'init-paredit)
 (require 'init-flymake)
 
-(require 'init-pdf)
+;; (require 'init-pdf)
 (require 'init-org)
 (require 'init-elfeed)
 
@@ -68,6 +67,8 @@
 (require 'init-markdown)
 (require 'init-lua)
 (require 'init-yaml)
+
+(require 'init-solidity)
 
 ;; programming language with lsp enabled
 (require 'init-eglot)

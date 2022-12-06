@@ -3,6 +3,7 @@
 ;;; Code:
 
 (require 'init-package-util)
+(require 'init-eglot)
 
 (use-package rustic
   :custom
