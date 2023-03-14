@@ -14,6 +14,7 @@ multisession
 newsticker
 history
 recentf
+tree-sitter
 custom.el
 ido*
 *.*~

@@ -76,9 +76,10 @@
 (require 'init-rust)
 (require 'init-python)
 (require 'init-haskell)
+(require 'init-dart)
 (require 'init-javascript) ;; TODO configurate when start js development
 
-(require 'init-helpful)
+;; (require 'init-helpful)
 ;; (require 'init-which-key)
 
 ;; load custom.el if file exists
@@ -92,3 +93,4 @@
 
 (provide 'init)
 ;;; init.el ends here
+(put 'narrow-to-region 'disabled nil)
