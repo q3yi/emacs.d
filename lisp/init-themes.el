@@ -10,8 +10,8 @@
 			(let ((hour (nth 2 (decode-time (current-time)))))
 			  (if (< 8 hour 20) 'light 'dark)))))
        (pcase appearance
-	 ('light (modus-themes-load-operandi))
-	 ('dark (modus-themes-load-vivendi)))))
+	 ('light (load-theme 'modus-operandi :no-confirm))
+	 ('dark (load-theme 'modus-vivendi :no-confirm)))))
 
 (use-package modus-themes
   :ensure
@@ -19,12 +19,7 @@
   :init
   (setq modus-themes-italic-constructs t
 	modus-themes-bold-constructs nil
-	modus-themes-prompts '(bold intense)
-	modus-themes-mode-line '(accented)
-	modus-themes-paren-match nil
-	modus-themes-region '(bg-only no-extend))
-  ;; Load the theme files before enabling a theme
-  (modus-themes-load-themes)
+	modus-themes-prompts '(bold intense))
   :config
   (max-auto-change-theme))
 
