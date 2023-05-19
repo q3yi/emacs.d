@@ -5,9 +5,10 @@
 (require 'init-package-util)
 (require 'init-eglot)
 
-(use-package go-mode
-  :pin melpa-stable
-  :hook (go-mode . eglot-ensure))
+(use-package go-ts-mode
+  :if (treesit-available-p)
+  :mode (("\\.go\\'" . go-ts-mode))
+  :hook (go-ts-mode . eglot-ensure))
 
 (provide 'init-golang)
 ;;; init-golang.el ends here

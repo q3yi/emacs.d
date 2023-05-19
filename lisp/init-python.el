@@ -5,13 +5,14 @@
 (require 'init-package-util)
 
 ;;; In order to start eglot, make sure pyright was installed
-(use-package python-mode
-  :pin melpa-stable
+(use-package python
+  :if (treesit-available-p)
   :ensure nil
+  :mode (("\\.py[iw]?\\'" . python-ts-mode))
   :custom
   (python-shell-interpreter "python3")
   :hook
-  (python-mode . eglot-ensure))
+  (python-ts-mode . eglot-ensure))
 
 (provide 'init-python)
 ;;; init-python.el ends here

@@ -5,16 +5,10 @@
 (require 'init-package-util)
 (require 'init-eglot)
 
-(use-package rust-mode
-  :pin melpa-stable)
-
-(use-package rustic
-  :pin melpa-stable
-  :after rust-mode
-  :custom
-  ((rustic-lsp-client 'eglot)
-   (rustic-lsp-server 'rust-analyzer)
-   (rustic-format-on-save t)))
+(use-package rust-ts-mode
+  :if (treesit-available-p)
+  :mode (("\\.rs\\'" . rust-ts-mode))
+  :hook (rust-ts-mode . eglot-ensure))
 
 (provide 'init-rust)
 ;;; init-rust.el ends here
