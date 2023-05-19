@@ -22,7 +22,7 @@
   (define-key paredit-mode-map (kbd "M-s") nil)
   (define-key paredit-mode-map (kbd "M-?") nil))
 
-(defun max-turn-off-electric-pair-mode ()
+(defun q3yi-turn-off-electric-pair-mode ()
   "Turn off `electric-pair-mode'."
   (electric-pair-mode 0))
 
@@ -31,7 +31,7 @@
 (add-hook 'text-mode-hook 'electric-pair-mode)
 
 ;; Disable `electric-pair-mode' when paredit is enabled
-(add-hook 'paredit-mode-hook 'max-turn-off-electric-pair-mode)
+(add-hook 'paredit-mode-hook 'q3yi-turn-off-electric-pair-mode)
 
 (use-package rainbow-delimiters
   :pin melpa-stable

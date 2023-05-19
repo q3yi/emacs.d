@@ -6,7 +6,7 @@
 (require 'init-package-util)
 (require 'init-eglot)
 
-(defun max-haskell-interactive-bring ()
+(defun q3yi-haskell-interactive-bring ()
   "Bring haskell interactive buffer.
 
 Try to open a haskell interactive buffer, if minor mode
@@ -29,7 +29,7 @@ then turn on the minor mode and open the REPL."
   :bind
   (:map haskell-mode-map
 	("C-c C-c" . haskell-compile)
-	("C-`" . max-haskell-interactive-bring))
+	("C-`" . q3yi-haskell-interactive-bring))
   :hook
   ((haskell-mode . turn-on-haskell-decl-scan)
    (haskell-mode . eglot-ensure)

@@ -1,4 +1,4 @@
-# Max's Emacs Configuration
+# QingYI's Emacs Configuration
 
 An in-progressing emacs configuration.
 

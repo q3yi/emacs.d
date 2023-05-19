@@ -3,10 +3,11 @@
 ;;; Code:
 
 (require 'init-package-util)
+(require 'init-before-save)
 
-(defvar max-roam-directory "~/Roam" "Roam file home directory.")
+(defvar q3yi-roam-directory "~/Roam" "Roam file home directory.")
 
-(defvar max-latex-preview-process-xdvsvgm
+(defvar q3yi-latex-preview-process-xdvsvgm
   '(xdvsvgm :progams
 	    ("xelatex" "dvisvgm")
 	    :discription "xdv > svg"
@@ -18,13 +19,6 @@
 	    :image-converter ("dvisvgm %f -n -b min -c %S -o %O"))
   "Customed `org-latex-preview-process' use xelatex instead of latex.")
 
-(defun max-org-mode-setup ()
-    "Setup config when org mode startup."
-    (org-indent-mode)
-    (auto-fill-mode t)
-    (setq truncate-lines nil)
-    (add-hook 'before-save-hook #'whitespace-cleanup))
-
 (use-package org
   :ensure nil
   :pin gnu
@@ -32,11 +26,14 @@
   (("C-c a" . org-agenda)
    ("C-c c" . org-capture))
   :hook
-  ((org-mode . max-org-mode-setup))
+  ((org-mode . (lambda ()
+		 (org-indent-mode)
+		 (auto-fill-mode t)
+		 (setq truncate-lines nil))))
   :custom
   ((org-latex-compiler "xelatex")  ;; use xelatex to support CJK when export org file to pdf
    (org-latex-pdf-process '("xelatex %f"))
-   (org-directory (file-name-concat max-roam-directory "agenda"))
+   (org-directory (file-name-concat q3yi-roam-directory "agenda"))
    (org-default-notes-file (expand-file-name "tasks.org" org-directory))
    (org-agenda-files (directory-files org-directory t "\\.org$"))
    (org-refile-targets '(("archive.org" :maxlevel . 1)))
@@ -54,10 +51,11 @@
   (require 'org-tempo)
   (require 'org-habit)
   (require 'ox-latex)
+  (require 'whitespace)
 
   ;; use new svg for preview instead of png
   ;; may not be worked on system that do not support display svg
-  (add-to-list 'org-preview-latex-process-alist max-latex-preview-process-xdvsvgm)
+  (add-to-list 'org-preview-latex-process-alist q3yi-latex-preview-process-xdvsvgm)
   (setq org-preview-latex-default-process 'xdvsvgm)
 
   ;; add ctex package to exported latex file
@@ -65,7 +63,8 @@
 
   ;; auto save all org buffer when refile
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
-  (add-to-list 'org-modules 'org-habit))
+  (add-to-list 'org-modules 'org-habit)
+  (q3yi-add-before-save-hooks-within-mode 'org-mode 'whitespace-cleanup))
 
 ;; use org-fragtog to toggle org-mode latex preview
 (use-package org-fragtog
@@ -84,9 +83,9 @@
 (use-package org-roam
   :pin melpa
   :init
-  (setq org-roam-directory max-roam-directory)
+  (setq org-roam-directory q3yi-roam-directory)
   (setq org-roam-db-location
-	(file-name-concat max-roam-directory ".org-roam" "org-roam.db"))
+	(file-name-concat q3yi-roam-directory ".org-roam" "org-roam.db"))
   :commands (org-roam-node-find)
   :custom
   ((org-roam-node-display-template (concat "${title:30}\t"
