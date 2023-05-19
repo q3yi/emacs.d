@@ -3,7 +3,7 @@
 ;;; Code:
 
 (require 'init-package-util)
-(require 'max-misc)
+(require 'init-before-save)
 
 (defun max-indent-before-save ()
   "Call fish indent function before save."
@@ -11,9 +11,10 @@
 
 (use-package fish-mode
   :pin melpa-stable
-  :hook
-  ((fish-mode . max-indent-before-save)
-   (fish-mode . max-clean-whitespace-before-save)))
+  :config
+  (require 'whitespace)
+  (q3yi-add-before-save-hooks-within-mode 'fish-mode 'whitespace-cleanup)
+  (q3yi-add-before-save-hooks-within-mode 'fish-mode 'fish_indent-before-save))
 
 (provide 'init-fish)
 ;;; init-fish.el ends here

@@ -2,10 +2,15 @@
 ;;; Commentary:
 ;;;
 ;;; Code:
+(require 'init-before-save)
+(require 'whitespace)
 
-(require 'max-misc)
+(defun q3yi-indent-buffer ()
+  "Indent current buffer."
+  (indent-region (point-min) (point-max)))
 
-(add-hook 'emacs-lisp-mode-hook 'max-clean-whitespace-before-save)
+(q3yi-add-before-save-hooks-within-mode 'emacs-lisp-mode 'whitespace-cleanup)
+(q3yi-add-before-save-hooks-within-mode 'emacs-lisp-mode 'q3yi-indent-buffer)
 
 (provide 'init-emacs-lisp)
 ;;; init-emacs-lisp.el ends here

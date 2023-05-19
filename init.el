@@ -63,7 +63,6 @@
 (require 'init-fish)
 (require 'init-html)
 (require 'init-scheme)
-(require 'init-solidity)
 (require 'init-markdown)
 (require 'init-lua)
 (require 'init-yaml)
@@ -93,4 +92,3 @@
 
 (provide 'init)
 ;;; init.el ends here
-(put 'narrow-to-region 'disabled nil)
