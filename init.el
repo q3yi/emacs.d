@@ -54,18 +54,18 @@
 (require 'init-paredit)
 (require 'init-flymake)
 
-;; (require 'init-pdf)
 (require 'init-org)
 (require 'init-elfeed)
 
 ;; programming language without lsp configuration
 (require 'init-emacs-lisp)
 (require 'init-fish)
-(require 'init-html)
+;;(require 'init-html)
 (require 'init-scheme)
 (require 'init-markdown)
 (require 'init-lua)
 (require 'init-yaml)
+(require 'init-toml)
 
 (require 'init-solidity)
 

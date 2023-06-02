@@ -8,7 +8,8 @@
 (use-package rust-ts-mode
   :if (treesit-available-p)
   :mode (("\\.rs\\'" . rust-ts-mode))
-  :hook (rust-ts-mode . eglot-ensure))
+  :hook
+  ((rust-ts-mode . eglot-ensure)))
 
 (provide 'init-rust)
 ;;; init-rust.el ends here

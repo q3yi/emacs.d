@@ -4,13 +4,9 @@
 (require 'init-package-util)
 
 (when (treesit-available-p)
-
-  (use-package js
-    :mode (("\\(\\.js[mx]\\|\\.har\\)\\'" . js-ts-mode)))
-
-  (use-package typescript-ts-mode
-    :mode (("\\.tsx\\'" . tsx-ts-mode)
-	   ("\\.ts\\'" . typescript-ts-mode))))
+  (add-to-list 'major-mode-remap-alist '(js2-mode . js-ts-mode))
+  (add-to-list 'major-mode-remap-alist '(typescript-mode . typescript-ts-mode))
+  (add-to-list 'major-mode-remap-alist '(json-mode . json-ts-mode)))
 
 (provide 'init-javascript)
 ;;; init-javascript.el ends here

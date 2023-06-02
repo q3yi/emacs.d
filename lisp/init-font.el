@@ -43,7 +43,8 @@ ENG-FONT and CJK-FONT should be a font object not a name string."
   ;; set chinese font
   (dolist (charset '(kana han symbol cjk-misc bopomofo))
     (set-fontset-font "fontset-default" charset cjk-font))
-  (message (format "cjk-font-rescale-ratio: %f" cjk-font-rescale-ratio))
+
+  ;; (message (format "cjk-font-rescale-ratio: %f" cjk-font-rescale-ratio))
 
   (setq face-font-rescale-alist
 	(if (and cjk-font-rescale-ratio (/= cjk-font-rescale-ratio 0.0))

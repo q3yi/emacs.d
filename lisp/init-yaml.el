@@ -6,7 +6,8 @@
 
 (use-package yaml-ts-mode
   :if (treesit-available-p)
-  :mode (("\\.ya?ml\\'" . yaml-ts-mode))
+  :init
+  (add-to-list 'major-mode-remap-alist '(yaml-mode . yaml-ts-mode))
   :config
   (require 'whitespace)
   (q3yi-add-before-save-hooks-within-mode 'yaml-ts-mode 'whitespace-cleanup))
