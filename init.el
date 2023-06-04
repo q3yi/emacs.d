@@ -78,7 +78,7 @@
 (require 'init-dart)
 (require 'init-javascript) ;; TODO configurate when start js development
 
-;; (require 'init-helpful)
+(require 'init-helpful)
 ;; (require 'init-which-key)
 
 ;; load custom.el if file exists
