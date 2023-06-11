@@ -39,6 +39,8 @@
    (org-refile-targets '(("archive.org" :maxlevel . 1)))
    (org-agenda-start-with-log-mode t)
 
+   (org-todo-keywords '((sequence "TODO" "DOING" "|" "DONE" "CANCEL")))
+
    (org-ellipsis " ▾")
    (org-return-follows-link t)
 
@@ -89,7 +91,8 @@
   :commands (org-roam-node-find)
   :custom
   ((org-roam-node-display-template (concat "${title:30}\t"
-					   (propertize "${tags}" 'face 'org-tag))))
+					   (propertize "${tags}" 'face 'org-tag)))
+   (org-roam-complete-everywhere t))
   :bind
   (("C-c r l" . org-roam-buffer-toggle)
    ("C-c r i" . org-roam-node-insert)
@@ -100,7 +103,7 @@
   :config
   (setq org-roam-capture-templates
 	'(("d" "default" plain "%?" :target
-	   (file+head "${slug}.org" "#+title: ${title}\n#+created_time: %<%Y-%m-%dT%H:%M:%S%:z>\n")
+	   (file+head "%<%Y>/%<%m>/%<%s>-${slug}.org" "#+title: ${title}\n#+created_time: %<%Y-%m-%dT%H:%M:%S%:z>\n")
 	   :unnarrowed t)))
   (org-roam-db-autosync-enable))
 
