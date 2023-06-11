@@ -3,7 +3,7 @@ python-ts-mode
 (leetcode "import unittest;" n
 	  "from typing import *;" n n
 	  "class Solution:" n n>
-	  "def " (p "func" fn) "(" p ") -> " p ":" n> >
+	  "def " (p "func" fn) "(self, " p ") -> " p ":" n> >
 	  "pass" n n n
 	  "class TestSolution(unittest.TestCase):" n>
 	  "def _run_test(self, test_f):" n>
