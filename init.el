@@ -24,6 +24,7 @@
 
 (require 'init-defaults)
 (require 'init-scroll)
+(require 'init-tab)
 (require 'init-epa)
 (require 'init-delight)
 (require 'init-themes)

@@ -92,7 +92,7 @@
   :custom
   ((org-roam-node-display-template (concat "${title:30}\t"
 					   (propertize "${tags}" 'face 'org-tag)))
-   (org-roam-complete-everywhere t))
+   (org-roam-completion-everywhere t))
   :bind
   (("C-c r l" . org-roam-buffer-toggle)
    ("C-c r i" . org-roam-node-insert)

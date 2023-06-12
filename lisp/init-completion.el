@@ -19,7 +19,8 @@
   :ensure nil
   :bind (:map vertico-map
 	      ("RET" . vertico-directory-enter)
-	      ("DEL" . vertico-directory-delete-char))
+	      ("DEL" . vertico-directory-delete-char)
+	      ("C-j" . vertico-exit-input))
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
 (use-package orderless
@@ -70,7 +71,7 @@
   (cape-dabbrev-check-other-buffers t)
   :init
   ;; Add `completion-at-point-functions', used by `completion-at-point'.
-  ;; (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-file))
 
 (provide 'init-completion)

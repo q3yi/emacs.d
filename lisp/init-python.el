@@ -3,6 +3,7 @@
 ;;; Code:
 
 (require 'init-package-util)
+(require 'init-before-save)
 
 ;;; In order to start eglot, make sure pyright was installed
 (use-package python
@@ -12,7 +13,9 @@
   :hook
   (python-ts-mode . eglot-ensure)
   :init
-  (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode)))
+  (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode))
+  :config
+  (q3yi-add-before-save-hooks-within-mode 'yaml-ts-mode 'whitespace-cleanup))
 
 (provide 'init-python)
 ;;; init-python.el ends here

@@ -14,13 +14,13 @@
     (:eng (:name "Fantasque Sans Mono" :weight regular :size 14)
 	  :cjk (:name "LXGW WenKai" :size 14)
 	  :cjk-rescale 0.0)
-    (:eng (:name "M Plus 1 Code" :weight regular :size 14)
+    (:eng (:name "Fairfax HD" :weight regular :size 14)
 	  :cjk (:name "LXGW WenKai" :weight regular :size 14)
 	  :cjk-rescale nil)
     (:eng (:name "monofur for Powerline" :weight regular :size 14)
 	  :cjk (:name "LXGW WenKai" :weight regular :size 14)
 	  :cjk-rescale 0.0)
-    (:eng (:name "Monaco" :weight regular :size 12)
+    (:eng (:name "Monego" :weight regular :size 12)
 	  :cjk (:name "LXGW WenKai" :weight regular :size 12)
 	  :cjk-rescale 1.2))
   "Compatiable english-chinese font pairs.
@@ -54,7 +54,7 @@ ENG-FONT and CJK-FONT should be a font object not a name string."
 (defun q3yi-set-font (&optional n)
   "Set font to Nth font pairs in `q3yi-eng-cjk-font-pairs'."
 
-  (interactive "N(1:Unifont, 2:Ubuntu, 3:Iose, 4:Fantasque, 5:M+, 6:Monofur, 7:Monaco): ")
+  (interactive "N(1:Unifont, 2:Ubuntu, 3:Iose, 4:Fantasque, 5:Fairfax, 6:Monofur, 7:Monego): ")
   (let* ((n (if (and n (> n 0)) (- n 1) 0))
 	 (font-pair (nth n q3yi-eng-cjk-font-pairs))
 	 (eng-font-cfg (plist-get font-pair :eng))
