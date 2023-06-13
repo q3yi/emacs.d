@@ -7,7 +7,7 @@
   :commands (combobulate-mode)
   :preface
   (setq combobulate-key-prefix "C-c o")
-  :load-path ("site-lisp/combobulate"))
+  :load-path ("plugins/combobulate"))
 
 (provide 'init-combobulate)
 ;;; init-combobulate.el ends here

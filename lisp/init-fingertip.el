@@ -5,7 +5,7 @@
 
 (use-package fingertip
   :commands (fingertip-mode)
-  :load-path ("site-lisp/fingertip")
+  :load-path ("plugins/fingertip")
   :bind
   (:map fingertip-mode-map
 	("(" . fingertip-open-round)

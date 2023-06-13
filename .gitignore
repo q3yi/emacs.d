@@ -16,7 +16,7 @@ history
 recentf
 tree-sitter
 custom.el
-site-lisp/*
+plugins/*
 ido*
 *.*~
 *lsp-session*
