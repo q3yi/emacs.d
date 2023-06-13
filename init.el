@@ -36,6 +36,10 @@
 (when (getenv "WSL_DISTRO_NAME")
   (require 'init-rime))
 
+(require 'init-consult)
+(require 'init-completion)
+(require 'init-embark)
+
 (require 'init-dired)
 (require 'init-term)
 
@@ -44,10 +48,6 @@
 (require 'init-avy)
 (require 'init-window)
 (require 'init-undo-tree)
-
-(require 'init-completion)
-(require 'init-consult)
-(require 'init-embark)
 
 (require 'init-crux)
 (require 'init-tempel)

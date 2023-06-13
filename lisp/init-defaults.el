@@ -32,5 +32,7 @@
 
 (global-set-key (kbd "C-x a r") #'align-regexp)
 
+(recentf-mode +1)
+
 (provide 'init-defaults)
 ;;; init-defaults.el ends here

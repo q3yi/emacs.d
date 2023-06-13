@@ -4,7 +4,6 @@
 ;;; Code:
 
 (require 'init-package-util)
-(require 'init-ace-window)
 
 (use-package embark
   :pin melpa-stable

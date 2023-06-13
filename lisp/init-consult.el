@@ -3,10 +3,12 @@
 ;;;
 ;;; Code:
 (require 'init-package-util)
+(require 'project)
 
 (use-package consult
   :pin gnu
   :demand t
+  :ensure t
   :bind (;; C-c bindings in `mode-specific-map'
 	 ("C-c M-x" . consult-mode-command)
 	 ("C-c h" . consult-history)
@@ -106,13 +108,45 @@
   ;; Both < and C-+ work reasonably well.
   (setq consult-narrow-key "<") ;; "C-+"
 
+  (delete 'consult--source-project-recent-file-hidden consult-buffer-sources)
+  (delete 'consult--source-project-recent-file consult-buffer-sources)
+
+  (defvar q3yi-consult--source-project-file
+    `(:name "Project Files"
+	    :narrow   ?p
+	    :category file
+	    :hidden   t
+	    :face     consult-file
+	    :state    ,#'consult--file-state
+	    :enabled  ,#'project-current
+	    :new      ,(lambda (file)
+			 (consult--file-action
+			  (expand-file-name file (consult--project-root))))
+	    :items    ,(lambda ()
+			 (ignore-errors
+			   (let* ((pr (project-current nil))
+				  (root (file-truename (project-root pr)))
+				  (len (length root))
+				  (ht (consult--buffer-file-hash)))
+			     (mapcar (lambda (file)
+				       (let ((part (substring file len)))
+					 (put-text-property 0 1 'multi-category `(file . ,file) part)
+					 part))
+				     (cl-remove-if (lambda (file)
+						     (or (gethash file ht)
+							 (equal file root)
+							 (string-match-p "\\(.*#\\)" file)))
+						   (project-files pr)))))))
+    "Project file cannidate source for `consult-buffer'.")
+
+  (add-to-list 'consult-buffer-sources 'q3yi-consult--source-project-file 'append)
+
   (setq completion-in-region-function
 	(lambda (&rest args)
 	  (apply (if vertico-mode
 		     #'consult-completion-in-region
 		   #'completion--in-region)
-		 args)))
-  )
+		 args))))
 
 (provide 'init-consult)
 ;;; init-consult.el ends here
