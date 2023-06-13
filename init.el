@@ -42,7 +42,7 @@
 (require 'init-isearch)
 (require 'init-ibuffer)
 (require 'init-avy)
-(require 'init-ace-window)
+(require 'init-window)
 (require 'init-undo-tree)
 
 (require 'init-completion)

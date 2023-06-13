@@ -25,8 +25,6 @@
 (when (fboundp 'global-so-long-mode)
   (global-so-long-mode))
 
-(add-hook 'after-init-hook 'winner-mode)
-
 ;; remap down/upper/capitalize case to dwim (do what I mean)
 (global-set-key [remap downcase-word] 'downcase-dwim)
 (global-set-key [remap upcase-word] 'upcase-dwim)
