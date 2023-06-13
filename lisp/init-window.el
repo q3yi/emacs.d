@@ -3,25 +3,35 @@
 ;;;
 ;;; Code:
 (require 'init-package-util)
+(require 'init-consult)
+
+(require 'project)
 
 (use-package ace-window
   :pin melpa
   :ensure t
   :custom
   ((aw-dispatch-always t)
-   (aw-minibuffer-flag t)
-   (aw-dispatch-alist
-    '((?x aw-delete-window "Delete window")
-      (?k (lambda (window) (aw-delete-window window t)) "Delete window and buffer")
-      (?s aw-swap-window "Swap windows")
-      (?m aw-move-window "Move window")
-      (?c aw-copy-window "Copy window")
-      (?b aw-switch-buffer-other-window "Switch buffer in selected window")
-      (?= aw-split-window-fair "Split fair window")
-      (?- aw-split-window-vert "Split window horizontally")
-      (?\\ aw-split-window-horz "Split window vertically")
-      (?n delete-other-windows "Keep only one window")
-      (?h aw-show-dispatch-help))))
+   (aw-minibuffer-flag t))
+  :init
+
+  (defun q3yi-aw-switch-buffer-other-window (window)
+    "Switch buffer in WINDOW."
+    (aw-switch-to-window window)
+    (unwind-protect (consult-buffer) (aw-flip-window)))
+
+  (setq aw-dispatch-alist
+	'((?x aw-delete-window "Delete window")
+	  (?k (lambda (window) (aw-delete-window window t)) "Delete window and buffer")
+	  (?s aw-swap-window "Swap windows")
+	  (?m aw-move-window "Move window")
+	  (?c aw-copy-window "Copy window")
+	  (?b q3yi-aw-switch-buffer-other-window "Switch buffer in selected window")
+	  (?= aw-split-window-fair "Split fair window")
+	  (?- aw-split-window-vert "Split window horizontally")
+	  (?\\ aw-split-window-horz "Split window vertically")
+	  (?n delete-other-windows "Keep only one window")
+	  (?h aw-show-dispatch-help)))
   :bind (("M-o" . ace-window)))
 
 (use-package popper

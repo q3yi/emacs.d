@@ -31,7 +31,6 @@
 	 ("M-y" . consult-yank-pop) ;; orig. yank-pop
 	 ;; M-g bindings in `goto-map'
 	 ("M-g e" . consult-compile-error)
-	 ("M-g f" . consult-flymake) ;; Alternative: consult-flycheck
 	 ("M-g g" . consult-goto-line)   ;; orig. goto-line
 	 ("M-g M-g" . consult-goto-line) ;; orig. goto-line
 	 ("M-g o" . consult-outline) ;; Alternative: consult-org-heading
@@ -39,6 +38,8 @@
 	 ("M-g k" . consult-global-mark)
 	 ("M-g i" . consult-imenu)
 	 ("M-g I" . consult-imenu-multi)
+	 ;; flymake
+	 ("C-c 1 g" . consult-flymake)
 	 ;; M-s bindings in `search-map'
 	 ("M-s d" . consult-find)
 	 ("M-s D" . consult-locate)
