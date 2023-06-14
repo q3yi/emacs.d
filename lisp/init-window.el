@@ -38,9 +38,9 @@
   :pin melpa
   :ensure t
   :bind (("M-`" . popper-toggle-latest)
-	 ("H-'" . popper-toggle-latest)
-	 ("H-." . popper-cycle)
-	 ("H-," . popper-toggle-type))
+	 ("H-`" . popper-cycle)
+	 ("C-`" . popper-cycle)
+	 ("C-M-`" . popper-toggle-type))
   :init
   (setq popper-group-function #'popper-group-by-project)
   (setq popper-reference-buffers
