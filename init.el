@@ -29,6 +29,8 @@
 (require 'init-delight)
 (require 'init-themes)
 
+(require 'init-project)
+
 (when (eq system-type 'darwin)
   (require 'init-osx))
 
