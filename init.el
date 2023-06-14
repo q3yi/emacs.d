@@ -55,6 +55,7 @@
 (require 'init-tempel)
 (require 'init-git)
 (require 'init-paredit)
+(require 'init-iedit)
 (require 'init-flymake)
 
 (require 'init-org)

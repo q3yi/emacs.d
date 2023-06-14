@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 (require 'init-package-util)
-(require 'project)
 
 ;; setup vterm
 (use-package vterm
@@ -15,7 +14,11 @@
   (:map vterm-mode-map
 	("C-q" . vterm-send-next-key)
 	:map project-prefix-map
-	("t" . vterm)))
+	("t" . vterm))
+  :config
+  (define-key vterm-mode-map (kbd "M-`") nil t)
+  (define-key vterm-mode-map (kbd "<f1>") nil t)
+  (define-key vterm-mode-map (kbd "M--") nil t))
 
 ;; configurate eshell
 (use-package eshell
