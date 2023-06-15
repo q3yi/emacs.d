@@ -10,8 +10,6 @@ python-ts-mode
 	  "test_cases = []" n> q n n
 	  "    def test_" (s fn) "(self):" n>
 	  "s = Solution()" n>
-	  "self._run_test(s." (s fn) ")" n n
-	  "if __name__ == \"__main__\":" n>
-	  "unittest.main()" n)
+	  "self._run_test(s." (s fn) ")" n)
 
 (main "if __name == \"__main__\":" n> q)

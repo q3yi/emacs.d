@@ -10,6 +10,7 @@
   (("C-k" . crux-smart-kill-line)
    ("C-o" . crux-smart-open-line)
    ("C-c \\" . crux-cleanup-buffer-or-region)
+   ("C-c d" . crux-duplicate-current-line-or-region)
    ([remap move-beginning-of-line] . crux-move-beginning-of-line)))
 
 ;; iedit package to support multiple cursor editing
@@ -87,7 +88,6 @@
 
 
 ;; global bindings
-(global-set-key (kbd "M-H-d") #'duplicate-line)
 (global-set-key (kbd "M-j") #'join-line)
 
 (global-set-key (kbd "s-<up>") #'move-text-up)

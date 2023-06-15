@@ -27,7 +27,7 @@
     ;; `tempel-expand' *before* the main programming mode Capf, such
     ;; that it will be tried first.
     (setq-local completion-at-point-functions
-		(cons #'tempel-expand
+		(cons #'tempel-complete
 		      completion-at-point-functions)))
 
   (add-hook 'prog-mode-hook 'tempel-setup-capf)
