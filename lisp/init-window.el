@@ -38,14 +38,13 @@
   :pin melpa
   :ensure t
   :bind (("M-`" . popper-toggle-latest)
-	 ("M--" . popper-cycle)
-	 ("C-`" . popper-cycle)
+	 ("s-`" . popper-cycle)
 	 ("C-M-`" . popper-toggle-type)
-	 ("C-M--" . popper-toggle-type))
+	 ("s-w" . popper-kill-latest-popup))
   :init
-  (setq popper-group-function #'popper-group-by-project)
+  (setq popper-group-function #'popper-group-by-directory)
   (setq popper-reference-buffers
-	'("^\\*Warnings\\*"
+	'(("^\\*Warnings\\*" . hide)
 	  "^\\*Compile-Log\\*"
 	  "^\\*Backtrace\\*"
 	  "\\*Messages\\*"
@@ -56,13 +55,20 @@
 	  "\\*Async Shell Command\\*"
 	  "\\*Completions\\*"
 	  help-mode
+	  helpful-mode
 	  compilation-mode
 	  "^\\*Embark Collect:.*\\*$" embark-collect-mode
 	  "^\\*Embark Export:.*\\*$" grep-mode
+	  "^\\*ielm*"
 	  "^\\*eshell.*\\*$" eshell-mode
 	  "^\\*vterm.*\\*$"  vterm-mode))
   (popper-mode +1)
   (popper-echo-mode +1))
+
+(global-set-key (kbd "M-s-<up>") #'enlarge-window)
+(global-set-key (kbd "M-s-<down>") #'shrink-window)
+(global-set-key (kbd "M-s-<right>") #'enlarge-window-horizontally)
+(global-set-key (kbd "M-s-<left>") #'shrink-window-horizontally)
 
 (provide 'init-window)
 ;;; init-window.el ends here

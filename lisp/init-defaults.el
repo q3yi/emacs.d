@@ -25,14 +25,5 @@
 (when (fboundp 'global-so-long-mode)
   (global-so-long-mode))
 
-;; remap down/upper/capitalize case to dwim (do what I mean)
-(global-set-key [remap downcase-word] 'downcase-dwim)
-(global-set-key [remap upcase-word] 'upcase-dwim)
-(global-set-key [remap capitalize-word] 'capitalize-dwim)
-
-(global-set-key (kbd "C-x a r") #'align-regexp)
-
-(recentf-mode +1)
-
 (provide 'init-defaults)
 ;;; init-defaults.el ends here

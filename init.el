@@ -30,6 +30,7 @@
 (require 'init-themes)
 
 (require 'init-project)
+(require 'init-window)
 
 (when (eq system-type 'darwin)
   (require 'init-osx))
@@ -41,6 +42,7 @@
 (require 'init-consult)
 (require 'init-completion)
 (require 'init-embark)
+(require 'init-pro-editing)
 
 (require 'init-dired)
 (require 'init-term)
@@ -48,14 +50,11 @@
 (require 'init-isearch)
 (require 'init-ibuffer)
 (require 'init-avy)
-(require 'init-window)
 (require 'init-undo-tree)
 
-(require 'init-crux)
 (require 'init-tempel)
 (require 'init-git)
 (require 'init-paredit)
-(require 'init-iedit)
 (require 'init-flymake)
 
 (require 'init-org)
@@ -83,7 +82,6 @@
 (require 'init-javascript) ;; TODO configurate when start js development
 
 (require 'init-helpful)
-;; (require 'init-which-key)
 
 ;; load custom.el if file exists
 (when (file-exists-p custom-file)

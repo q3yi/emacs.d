@@ -17,12 +17,14 @@
 (setq frame-resize-pixelwise t)
 
 ;; adjust
-(setq gc-cons-threshold (* 128 1024 1024))
+(setq gc-cons-threshold (* 256 1024 1024))
 (setq read-process-output-max (* 1024 1024))
 
 ;; disable GUI elements
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-;;; early-init.el ends here
 
+(setq native-comp-async-report-warnings-errors 'silent)
+
+;;; early-init.el ends here
