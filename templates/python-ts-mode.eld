@@ -1,7 +1,7 @@
 python-ts-mode
 
-(leetcode "import unittest;" n
-	  "from typing import *;" n n
+(leetcode "import unittest" n
+	  "from typing import *" n n
 	  "class Solution:" n n>
 	  "def " (p "func" fn) "(self, " p ") -> " p ":" n> >
 	  "pass" n n n
