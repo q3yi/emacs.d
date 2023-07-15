@@ -11,9 +11,9 @@
 			  (if (< 8 hour 20) 'light 'dark)))))
     (pcase appearance
       ('light (mapc #'disable-theme custom-enabled-themes)
-	      (load-theme 'modus-operandi :no-confirm))
+	      (load-theme 'modus-operandi-deuteranopia :no-confirm))
       ('dark (mapc #'disable-theme custom-enabled-themes)
-	     (load-theme 'modus-vivendi :no-confirm)))))
+	     (load-theme 'modus-vivendi-deuteranopia :no-confirm)))))
 
 (use-package modus-themes
   :ensure
