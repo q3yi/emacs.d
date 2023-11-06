@@ -63,8 +63,7 @@
 ;; programming language without lsp configuration
 (require 'init-emacs-lisp)
 (require 'init-fish)
-;;(require 'init-html)
-(require 'init-scheme)
+;;(require 'init-scheme)
 (require 'init-markdown)
 (require 'init-lua)
 (require 'init-yaml)

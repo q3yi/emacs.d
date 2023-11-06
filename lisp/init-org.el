@@ -5,7 +5,7 @@
 (require 'init-package-util)
 (require 'init-before-save)
 
-(defvar q3yi-roam-directory "~/Roam" "Roam file home directory.")
+(defvar q3yi-org-directory "~/Orgs" "Org file home directory.")
 
 (defvar q3yi-latex-preview-process-xdvsvgm
   '(xdvsvgm :progams
@@ -33,7 +33,7 @@
   :custom
   ((org-latex-compiler "xelatex")  ;; use xelatex to support CJK when export org file to pdf
    (org-latex-pdf-process '("xelatex %f"))
-   (org-directory (file-name-concat q3yi-roam-directory "agenda"))
+   (org-directory (file-name-concat q3yi-org-directory "agenda"))
    (org-default-notes-file (expand-file-name "tasks.org" org-directory))
    (org-agenda-files (directory-files org-directory t "\\.org$"))
    (org-refile-targets '(("archive.org" :maxlevel . 1)))
@@ -73,39 +73,6 @@
   :pin melpa-stable
   :hook
   (org-mode . org-fragtog-mode))
-
-;; export org as hugo compatible markdown
-(use-package ox-hugo
-  :pin melpa-stable
-  :hook
-  (org-mode . (lambda ()
-		(with-eval-after-load 'ox
-		  (require 'ox-hugo)))))
-
-(use-package org-roam
-  :pin melpa
-  :init
-  (setq org-roam-directory q3yi-roam-directory)
-  (setq org-roam-db-location
-	(file-name-concat q3yi-roam-directory ".org-roam" "org-roam.db"))
-  :commands (org-roam-node-find)
-  :custom
-  ((org-roam-node-display-template (concat "${title:30}\t"
-					   (propertize "${tags}" 'face 'org-tag)))
-   (org-roam-completion-everywhere t))
-  :bind
-  (("C-c r l" . org-roam-buffer-toggle)
-   ("C-c r i" . org-roam-node-insert)
-   ("C-c r f" . org-roam-node-find)
-   ("C-c r a" . org-roam-alias-add)
-   ("C-c r t" . org-roam-tag-add)
-   ("C-c r r" . org-roam-tag-remove))
-  :config
-  (setq org-roam-capture-templates
-	'(("d" "default" plain "%?" :target
-	   (file+head "%<%Y>/%<%m>/%<%s>-${slug}.org" "#+title: ${title}\n#+created_time: %<%Y-%m-%dT%H:%M:%S%:z>\n")
-	   :unnarrowed t)))
-  (org-roam-db-autosync-enable))
 
 (provide 'init-org)
 ;;; init-org.el ends here
